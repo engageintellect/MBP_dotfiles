@@ -1,0 +1,97 @@
+###[ ALIASES ]###
+
+# ZSH
+alias zaliases='nvim ~/.config/zsh/zsh_aliases'
+alias update-zsh='upgrade_oh_my_zsh'
+alias zshrc='nvim ~/.zshrc'
+alias zshenv='nvim ~/.zshenv'
+
+alias wally='python ~/bin/env/wally_cli.py'
+alias net-speed='python ~/code/python/projects/network_tools/network_speed_test/main.py'
+alias weather='python ~/code/python/projects/weather/local_weather.py'
+alias t='tree'
+alias url='~/bin/surf_by_url'
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias iwd='iwctl'
+alias surf='surf -N'
+alias pyserver='python -m http.server 8080'
+alias sp='/home/r3dux/bin/pacsearch.sh'
+alias rp='/home/r3dux/bin/pacremove.sh'
+alias v='nvim $(fzf)'
+alias s='python ~/bin/searcher.py'
+alias ff='fzf'
+alias xf='sudo fff'
+alias del='rm -rf'
+alias h='cd'
+alias covid='python3 ~/code/python/tools/covid.py'
+alias arp='python3 ~/code/python/tools/arp_scanner.py'
+alias vpn='python3 ~/code/python/tools/vpn-tool.py'
+alias services='systemctl --type=service'
+alias todo='calcurse'
+alias bsprc='nvim ~/.config/bspwm/bspwmrc'
+alias sxhkdrc='nvim ~/.config/sxhkd/sxhkdrc'
+alias gh='chromium --new-window --app=https://github.com/jc9361'
+alias ls='exa --icons'
+alias l='ls -l'
+alias ll='ls -al'
+alias la='ls -a'
+alias photos='sxiv -t -f ~/pictures'
+alias uptime='uptime -p'
+alias ytop='ytop -b -f'
+alias fetch='pfetch'
+alias fsociety='python2 ~/code/hacking/fsociety/fsociety.py'
+alias ..='cd ..'
+alias audio='pavucontrol'
+alias eq='qpaeq'
+alias mixer='alsamixer'
+alias myip='ip --color=auto a'
+alias getip='curl https://ipinfo.io/ip'
+#alias neo='unimatrix -c white -s 92 -u abcdefghijklmnopqrstuvwxyz1234567890!@#$%'
+alias neo='cmatrix'
+alias i3='nvim ~/.i3/config'
+alias nvimrc='nvim ~/.config/nvim/init.vim'
+alias bashrc='nvim ~/.bashrc'
+alias files='ranger'
+alias xfiles='sudo ranger'
+alias root='sudo -i'
+alias yt='python3 ~/code/python/tools/youtube_dl.py'
+alias transmission='transmission-cli'
+alias mix='pulsemixer'
+
+###[ PACMAN ]###
+# alias sync='sudo pacman --color auto -Syy'
+alias update='sudo pacman --color auto -Syyu'
+alias search='pacman --color auto -Ss'
+alias ipkg='pacman -Si'
+alias install='sudo pacman --color auto -S'
+alias remove='sudo pacman --color auto -Rns'
+alias paclist='pacman --color auto -Q | less'
+alias psearch='pacman --color auto -Q | grep'
+alias autoclean='sudo pacman -Qdt'
+alias linuxtool='python3 /home/r3dux/code/python/linuxtool.py'
+
+###[ SSH ]###
+alias MBP='ssh 192.168.0.247'
+alias SB2='ssh 192.168.0.157 -p 4320'
+alias x220='ssh 192.168.1.12 -p 4320'
+alias mom='ssh janakind-chadwick@192.168.0.9'
+alias server='ssh -i "~/docs/keys/ubuntu_aws.pem" ubuntu@54.177.92.108'
+
+###[ DMENU ALIASES ]###
+alias dmenu='dmenu -fn "Hack Nerd Font -12" -h 60 -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
+alias dmenu_run='dmenu_run -fn "Hack Nerd Font -12" -h 60 -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
+
+
+###[ GIT BARE REPO ]###
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.config/dotfiles --work-tree=$HOME'
+
+
+###[ FFF ]###
+f() {
+    fff "$@"
+    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
+}
+
+
+
+
