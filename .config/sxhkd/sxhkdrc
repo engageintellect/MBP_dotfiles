@@ -29,7 +29,7 @@ super + ctrl + Return
 
 # LAUNCHER
 super + d
-    ~/bin/env/dmenu_pywal.sh
+    ~/bin/env/pywal/dmenu_pywal.sh
 
 # NETWORK
 super + shift + n
@@ -37,9 +37,13 @@ super + shift + n
     #~/bin/env/networkmanager_dmenu_pywal.sh
     #networkmanager_dmenu  -fn 'mononoki Nerd Font-10' -nb '#000000' -sf '#000000' -sb '#ffffff' -nf '#ffffff'
 
+# EDIT CONFIGS
+super + shift + e
+    ~/bin/env/scripts/dmenu/dmenu_edit_configs.sh
+
 # CLIPMENU
 super + x
-    ~/bin/env/clipmenu_pywal.sh
+    ~/bin/env/pywal/clipmenu_pywal.sh
 
 # BATT
 super + b
@@ -51,7 +55,7 @@ super + p
 
 # RELOAD POLYBAR
 super + shift + p
-    killall polybar && polybar -r new && bspc config top_padding 20
+    killall polybar && polybar -r new && bspc config top_padding 30
 
 
 #==[ ROFI ]==#
@@ -59,36 +63,37 @@ super + shift + p
 # ROFI RUN
 super + shift + d
      rofi -show run -lines 6 -eh 2 -width 400 -padding 20 -opacity "20" -font "Hack Nerd Font 12"
-# ROFI WINDOWS
-super + shift + w
-     rofi -show window -lines 12 -eh 2 -width 600 -padding 20 -opacity "20" -font "Hack Nerd Font 12"
-# ROFI SSH
-super + shift + s
-     rofi -show ssh -lines 12 -eh 2 -width 600 -padding 20 -opacity "20" -font "Hack Nerd Font 12"
- # ROFI COMBI
-super + shift + c
-     rofi -show combi -lines 12 -eh 2 -width 600 -padding 20 -opacity "20" -font "Hack Nerd Font 12"
+# # ROFI WINDOWS
+# super + shift + w
+#      rofi -show window -lines 12 -eh 2 -width 600 -padding 20 -opacity "20" -font "Hack Nerd Font 12"
+# # ROFI SSH
+# super + shift + s
+#      rofi -show ssh -lines 6 -eh 2 -width 300 -padding 20 -opacity "20" -font "Hack Nerd Font 12"
+#  # ROFI COMBI
+# super + shift + c
+#      rofi -show combi -lines 12 -eh 2 -width 600 -padding 20 -opacity "20" -font "Hack Nerd Font 12"
 
 
 #===[ BROWSERS ]===#
 
 super + s 
     surf -N -z 1.0 https://web.tabliss.io/ 
-super + i
+super + w
     bspc desktop -f '^2' && qutebrowser
 super + f
     firefox
 super + c
     chromium
-super + w
-    qutebrowser
 
 
 #==[ PROGRAM BINDINGS ]===#
 
-
-# WALLY
+# DMENU BOOKMARKS
 super + shift + b
+    ~/bin/env/scripts/surf/bookmarks.sh
+    
+# WALLY
+super + shift + w
     ~/bin/env/wally.py
 
 # YOUTUBE
@@ -116,7 +121,7 @@ super + m
 
 # VIRTUALBOX
 super + v
-    bspc desktop -f '^8' && virtualbox
+    bspc desktop -f '^9' && virtualbox
 
 # EMACS
 super + e
