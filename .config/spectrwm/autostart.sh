@@ -1,16 +1,14 @@
 #!/usr/bin/env bash 
-
-#                         _
-#      ___ _ ____   _____| |__
-#     / _ \ '_ \ \ / / __| '_ \
-#    |  __/ | | \ V /\__ \ | | |
-#     \___|_| |_|\_(_)___/_| |_|
 #    
-#    BUILD: ThinkPad X220
-#    VERSION: 2.0
-
-# SXHKD
-# sxhkd &
+#                     _                                _          _            _
+#     ____ __  ___ __| |_ _ ___ __ ___ __    __ _ _  _| |_ ___ __| |_ __ _ _ _| |_
+#    (_-< '_ \/ -_) _|  _| '_\ V  V / '  \  / _` | || |  _/ _ (_-<  _/ _` | '_|  _|
+#    /__/ .__/\___\__|\__|_|  \_/\_/|_|_|_| \__,_|\_,_|\__\___/__/\__\__,_|_|  \__|
+#       |_|
+#    
+#    BUILD: MacBook Pro 
+#    VERSION: 1.0
+#    
 
 # SETUP TOUCHPAD
 /home/r3dux/bin/env/touchy.sh
@@ -45,6 +43,3 @@ xautolock -time 20 -locker slock &
 killall -q picom
 while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
 picom --experimental-backends &
-
-# ADJUST PADDING
-# /home/r3dux/bin/env/padding.sh

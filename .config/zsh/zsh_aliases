@@ -17,6 +17,8 @@ alias zshrc='nvim ~/.zshrc'
 alias zshenv='nvim ~/.zshenv'
 
 ###[ MAIN ]###
+alias pull='git pull origin master'
+alias push='git add . && git commit -m "updating repo..." && git push origin master'
 alias o='xdg-open'
 alias te='trash-empty'
 alias tl='trash-list'
@@ -82,7 +84,7 @@ alias search='pacman --color auto -Ss'
 alias ipkg='pacman -Si'
 alias install='sudo pacman --color auto -S'
 alias remove='sudo pacman --color auto -Rns'
-alias paclist='pacman --color auto -Q | less'
+alias paclist='~/bin/env/scripts/paclist.sh'
 alias psearch='pacman --color auto -Q | grep'
 alias autoclean='sudo pacman -Qdt'
 

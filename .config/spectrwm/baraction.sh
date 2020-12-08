@@ -15,7 +15,7 @@ while :; do
 
 	let COUNT=$COUNT+1
 
-        echo " [$ssid]  [$local_ip]   [$battery_status:$battery_level]"
+        echo " [$ssid]   [$local_ip]    [$battery_status:$battery_level]"
         sleep $SLEEP_SEC
 done
 
