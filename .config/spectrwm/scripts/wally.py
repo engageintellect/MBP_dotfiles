@@ -7,6 +7,9 @@
 #                   |___/
 # A python script for setting wallpaper using sxiv gui
 # and generate/apply colorscheme made from wallpaper.
+#
+# BUILD: MacBook Pro (SPECTRWM)
+# VERSION: 1.0
 
 import os
 import time
@@ -17,12 +20,10 @@ def setwall():
     if pic == '':
         quit()
     else:
-        os.system('nitrogen --save --set-zoom-fill ' + pic)
-        os.system('wal --saturate 0.3 -i ' + pic)
-        # os.system('if pgrep -x firefox; then pywalfox update; fi')
-        # os.system('if pgrep -x bspwm; then bspc wm -r; fi')
-        # os.system('if ! pgrep -x picom; then picom; fi')
+        os.system(f'nitrogen --save --set-zoom-fill {pic}')
+        os.system(f'wal --saturate 0.3 -i {pic}')
         os.system('python3 ~/.config/spectrwm/scripts/pywal_spectrwm.py')
+        os.system('xdotool key super+shift+r')
         quit()
 
 setwall()

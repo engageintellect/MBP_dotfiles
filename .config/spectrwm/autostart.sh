@@ -33,13 +33,12 @@ python /home/r3dux/bin/env/pywal/st_pywal.py
 clipmenud &
 killall -q xfce4-power-manager
 xfce4-power-manager &
-~/bin/env/pywal/dunst_pywal.sh
+killall -q dunst
+~/.config/spectrwm/pywal/dunst_pywal.sh
 killall -q nitrogen
 nitrogen --restore &
 killall -q xautolock slock
 xautolock -time 20 -locker slock &
-# killall -q polybar
-# polybar -r new &
 killall -q picom
 while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
 picom --experimental-backends &
