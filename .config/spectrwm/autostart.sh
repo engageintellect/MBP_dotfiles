@@ -10,6 +10,10 @@
 #    VERSION: 1.0
 #    
 
+
+# HIDE BAR
+# xdotool key super+p
+
 # SETUP TOUCHPAD
 /home/r3dux/bin/env/touchy.sh
 
@@ -42,3 +46,4 @@ xautolock -time 20 -locker slock &
 killall -q picom
 while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
 picom --experimental-backends &
+

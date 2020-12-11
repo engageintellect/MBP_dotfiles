@@ -7,7 +7,7 @@
 
  reload_dunst() {
     pkill dunst
-    dunst \
+    dunst -conf ~/.config/dunst/dunst_spectrwm_rc \
 	-frame_width 0 \
         -lb "${color0}" \
         -nb "${color0}" \

@@ -22,7 +22,8 @@ quit")
 #     "$color15" -sb "$color3" -sf "$color0" -nhb "$color3" -nhf "$color0" -shb "$color3" -shf "$color15" -h 10 -p 'BOOKMARKS: ')
 
 # ROFI
-choice=$( echo -e "${options[0]}" | rofi -dmenu -p "BOOKMARKS" -font "Hack Nerd Font 12" -location 1 -width 20 -lines 100)
+choice=$( echo -e "${options[0]}" | rofi -dmenu -p "BOOKMARKS"  \
+    -font "Hack Nerd Font 10" -location 3 -width 15 -lines 100)
 
 case $choice in
 	quit)
