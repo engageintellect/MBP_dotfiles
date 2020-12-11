@@ -17,9 +17,12 @@ python_cheatsheet
 go_cheatsheet
 quit")
 
-choice=$( echo -e "${options[0]}" | dmenu -fn 'Hack Nerd Font -10' -nb "$color0" -nf \
-    "$color15" -sb "$color3" -sf "$color0" -nhb "$color3" -nhf "$color0" -shb "$color3" -shf "$color15" -h 10 -p 'BOOKMARKS: ')
+# DMENU
+# choice=$( echo -e "${options[0]}" | dmenu -fn 'Hack Nerd Font -10' -nb "$color0" -nf \
+#     "$color15" -sb "$color3" -sf "$color0" -nhb "$color3" -nhf "$color0" -shb "$color3" -shf "$color15" -h 10 -p 'BOOKMARKS: ')
 
+# ROFI
+choice=$( echo -e "${options[0]}" | rofi -dmenu -p "BOOKMARKS" -font "Hack Nerd Font 12" -location 1 -width 20 -lines 100)
 
 case $choice in
 	quit)
@@ -64,5 +67,5 @@ case $choice in
     ;;
 
 esac
-bspc desktop -f '^2' && chromium $choice
+surf $choice
 
