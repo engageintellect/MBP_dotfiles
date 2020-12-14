@@ -97,6 +97,7 @@ cat ~/.cache/wal/sequences
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
 
+
 #===[ VI MODE ]===#
 bindkey -v
 
@@ -119,6 +120,6 @@ bindkey -v
 
 
 #===[ ZSH RUNTIME ]===#
-clear && pfetch && echo "\n" && python ~/code/python/tools/fortune.py
+# clear && pfetch && echo "\n" && python ~/code/python/tools/fortune.py
 
 # source /home/r3dux/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
