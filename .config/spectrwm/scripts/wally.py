@@ -21,7 +21,7 @@ def setwall():
         quit()
     else:
         os.system(f'nitrogen --save --set-zoom-fill {pic}')
-        os.system(f'wal --saturate 0.3 -i {pic}')
+        os.system(f'wal -i {pic}')
         os.system('python3 ~/.config/spectrwm/scripts/pywal_spectrwm.py')
         os.system('xdotool key super+shift+r')
         quit()

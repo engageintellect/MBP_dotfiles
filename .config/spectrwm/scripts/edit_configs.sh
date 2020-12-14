@@ -45,7 +45,7 @@ case "$choice" in
         choice="$HOME/.config/polybar/config"
     ;;
     picom)
-        choice="$HOME/.config/picom/picom.conf"
+        choice="$HOME/.config/picom/picom.spectrwm"
     ;;
     nvim)
         choice="$HOME/.config/nvim/init.vim"

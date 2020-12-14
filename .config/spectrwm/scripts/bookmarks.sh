@@ -68,5 +68,5 @@ case $choice in
     ;;
 
 esac
-surf $choice
+qutebrowser $choice
 

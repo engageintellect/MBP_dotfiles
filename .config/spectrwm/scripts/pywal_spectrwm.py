@@ -15,9 +15,11 @@ with open(os.environ["HOME"] + "/.cache/wal/colors.json", "r") as Pywal_json:
 
     # GET COLORS FROM "~/.cache/wal/colors.json"
     pywal['background'] = hexColors(data['color0'])
-    pywal['focus'] = hexColors(data['color2'])
+    # pywal['focus'] = hexColors(data['color2'])
+    pywal['focus'] = hexColors(data['color15'])
     pywal['primary'] = hexColors(data['color3'])
-    pywal['unfocus'] = hexColors(data['color1'])
+    # pywal['unfocus'] = hexColors(data['color1'])
+    pywal['unfocus'] = hexColors(data['color0'])
     pywal['text'] = hexColors(data['color7'])
 
 
