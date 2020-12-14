@@ -39,7 +39,7 @@ export LESSHISTFILE=-
 
 # CLEAN UP
 #export XINITRC="/home/r3dux/.config/X11/.xinitrc
-# export ZDOTDIR="/home/r3dux/.config/zsh/.zshrc
-# export HISTFILE="$XDG_CONFIG_HOME"/zsh/.zsh_history
+export ZDOTDIR=~/.config/zsh
+export HISTFILE=~/.config/zsh/.zsh_history
 export GTK2_RC_FILES="$HOME"/.config/gtk-2.0/gtkrc-2.0
 
