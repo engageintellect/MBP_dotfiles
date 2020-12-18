@@ -6,16 +6,14 @@
 #    |_|                               |_|
 #    
 #    # BUILD: MacBook Pro    
-#    # VERSION: 1.0
+#    # VERSION: 1.0 (jonaburg)
 
 
 
 #################################
 #          Animations           #
 #################################
-# requires https://github.com/jonaburg/picom
-# (These are also the default values)
-transition-length = 500
+transition-length = 350
 transition-pow-x = 0.1
 transition-pow-y = 0.1
 transition-pow-w = 0.1
@@ -26,7 +24,6 @@ size-transition = true
 #################################
 #             Corners           #
 #################################
-# requires: https://github.com/sdhand/compton or https://github.com/jonaburg/picom
 corner-radius = 0.0;
 rounded-corners-exclude = [
   #"window_type = 'normal'",
@@ -45,26 +42,10 @@ round-borders-exclude = [
 #################################
 
 
-# Enabled client-side shadows on windows. Note desktop windows 
-# (windows with '_NET_WM_WINDOW_TYPE_DESKTOP') never get shadow, 
-# unless explicitly requested using the wintypes option.
-#
-# shadow = false
 shadow = true;
-
-# The blur radius for shadows, in pixels. (defaults to 12)
-# shadow-radius = 12
 shadow-radius = 20;
-
-# The opacity of shadows. (0.0 - 1.0, defaults to 0.75)
 shadow-opacity = .75
-
-# The left offset for shadows, in pixels. (defaults to -15)
-# shadow-offset-x = -15
 shadow-offset-x = -15;
-
-# The top offset for shadows, in pixels. (defaults to -15)
-# shadow-offset-y = -15
 shadow-offset-y = -15;
 
 # Avoid drawing shadows on dock/panel windows. This option is deprecated,
@@ -129,26 +110,10 @@ shadow-exclude = [
 #################################
 #           Fading              #
 #################################
-
-
-# Fade windows in/out when opening/closing and when opacity changes,
-#  unless no-fading-openclose is used.
-# fading = false
 fading = true;
-
-# Opacity change between steps while fading in. (0.01 - 1.0, defaults to 0.028)
-# fade-in-step = 0.028
 fade-in-step = 0.09;
-
-# Opacity change between steps while fading out. (0.01 - 1.0, defaults to 0.03)
-# fade-out-step = 0.03
 fade-out-step = 0.09;
-
-# The time between steps in fade step, in milliseconds. (> 0, defaults to 10)
 fade-delta = 7
-
-# Specify a list of conditions of windows that should not be faded.
-# don't need this, we disable fading for all normal windows with wintypes: {}
 fade-exclude = [
   "class_g = 'slop'"   # maim
 ]
@@ -167,7 +132,7 @@ fade-exclude = [
 
 # Opacity of inactive windows. (0.1 - 1.0, defaults to 1.0)
 # active-opacity = 1
-inactive-opacity = 0.9;
+# inactive-opacity = 0.9;
 
 # Opacity of window titlebars and borders. (0.1 - 1.0, disabled by default)
 # frame-opacity = 1.0
@@ -213,9 +178,7 @@ focus-exclude = [
 #
 # opacity-rule = []
 opacity-rule = [
-  "80:class_g     = 'Bar'",             # lemonbar
-  "100:class_g    = 'slop'",            # maim
-  # "80:class_g    = 'st-256color'",
+  # "90:class_g    = 'st-256color'",
   # "90:class_g    = 'Dunst'",
   "100:class_g    = 'URxvt'",
   "100:class_g    = 'kitty'",
@@ -223,12 +186,8 @@ opacity-rule = [
   # "100:class_g    = 'Polybar'",
   # "90:class_g     = 'dmenu'",
   # "90:class_g     = 'Rofi'",
-  "100:class_g    = 'code-oss'",
   "100:class_g    = 'Meld'",
-  "70:class_g     = 'TelegramDesktop'",
-  "90:class_g     = 'Joplin'",
   "100:class_g    = 'firefox'",
-  "100:class_g    = 'Thunderbird'"
 ];
 
 
