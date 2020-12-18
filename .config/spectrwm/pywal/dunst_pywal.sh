@@ -15,6 +15,9 @@
         -lf "${color7}" \
         -bf "${color7}" \
         -cf "${color7}" \
+        -lfr "${color15}" \
+        -nfr "${color15}" \
+        -cfr "${color15}" \
         -nf "${color7}" &
 }
 
