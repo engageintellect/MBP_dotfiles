@@ -14,10 +14,11 @@
 #===[ ZSH ]===#
 alias zaliases='nvim ~/.config/zsh/zsh_aliases'
 alias update-zsh='upgrade_oh_my_zsh'
-alias zshrc='nvim ~/.zshrc'
+alias zshrc='nvim ~/.config/zsh/.zshrc'
 alias zshenv='nvim ~/.zshenv'
 
 #===[ MAIN ]===#
+alias cl='clear'
 alias pull='git pull origin master'
 alias push='git add . && git commit -m "updating repo..." && git push origin master'
 alias o='xdg-open'
@@ -33,7 +34,7 @@ alias net-speed='python ~/code/python/projects/network_tools/network_speed_test/
 alias getip='curl https://ipinfo.io/ip'
 alias url='~/bin/env/scripts/surf/surf_by_url'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias iwd='iwctl'
+alias iwd='clear && iwctl'
 alias surf='surf -N'
 alias pyserver='python -m http.server 8080'
 alias s='python ~/bin/env/scripts/surf/searcher.py'
@@ -48,6 +49,7 @@ alias services='systemctl --type=service'
 alias bsprc='nvim ~/.config/bspwm/bspwmrc'
 alias sxhkdrc='nvim ~/.config/sxhkd/sxhkdrc'
 alias gh='chromium --new-window --app=https://github.com/jc9361'
+alias cp='cp -v'
 alias ls='exa --icons'
 alias l='ls -l'
 alias ll='ls -al'
@@ -83,7 +85,7 @@ alias autoclean='sudo pacman -Qdt'
 
 
 #===[ SSH ]===#
-alias MBP='ssh 192.168.0.247 -p 4320'
+alias MBP='ssh 192.168.0.238 -p 4320'
 alias SB2='ssh 192.168.0.157 -p 4320'
 alias x220='ssh 192.168.0.2 -p 4320'
 # alias server='ssh -i "~/docs/keys/ubuntu_aws.pem" ubuntu@54.177.92.108'
