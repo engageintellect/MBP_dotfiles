@@ -158,7 +158,7 @@ super + ctrl + r
     bspc wm -r
 
 # QUIT BSPWM
-super + ctrl + q
+super + shift + Escape
     killall -q bspwm
 
 # CLOSE AND KILL
