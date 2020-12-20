@@ -93,7 +93,7 @@ alert=$color3
 
 #===[ WINDOW RULES ]===#
 
-bspc rule -a st-256color:st-256color state=tiled rectangle=1200x900+0+0 center=true
+bspc rule -a st-256color:st-256color state=tiled rectangle=900x600+0+0 center=true
 bspc rule -a Alacritty rectangle=1200x800+0+0 center=true
 bspc rule -a Gimp desktop='^5' state=floating follow=on
 bspc rule -a qutebrowser state=tiled rectangle=1200x900+0+0 center=true

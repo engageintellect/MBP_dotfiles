@@ -27,8 +27,8 @@ super + a
 super + ctrl + Return
     ~/bin/env/scratchy.sh
 
-# LAUNCHER
-super + d
+# DMENU
+super + shift + d
     ~/bin/env/pywal/dmenu_pywal.sh
 
 # NETWORK
@@ -39,7 +39,8 @@ super + shift + n
 
 # EDIT CONFIGS
 super + shift + e
-    ~/bin/env/scripts/dmenu/dmenu_edit_configs.sh
+    ~/bin/env/scripts/rofi/edit_configs.sh
+    # ~/bin/env/scripts/dmenu/dmenu_edit_configs.sh
 
 # CLIPMENU
 super + x
@@ -61,8 +62,8 @@ super + shift + p
 #==[ ROFI ]==#
 
 # ROFI RUN
-super + shift + d
-     rofi -show run -lines 6 -eh 2 -width 400 -padding 20 -opacity "20" -font "Hack Nerd Font 12"
+super +  d
+     rofi -show run -lines 6 -eh 2 -width 400 -padding 20 -opacity "20" -font "Hack Nerd Font 10"
 # # ROFI WINDOWS
 # super + shift + w
 #      rofi -show window -lines 12 -eh 2 -width 600 -padding 20 -opacity "20" -font "Hack Nerd Font 12"
@@ -90,8 +91,14 @@ super + c
 
 # DMENU BOOKMARKS
 super + shift + b
-    ~/bin/env/scripts/surf/bookmarks.sh
+    ~/bin/env/scripts/rofi/bookmarks.sh
+    # ~/bin/env/scripts/surf/bookmarks.sh
     
+# COMPILE SUCKLESS
+super + shift + c
+    ~/bin/env/scripts/rofi/compile_suckless.sh
+    # ~/bin/env/scripts/surf/bookmarks.sh
+
 # WALLY
 super + shift + w
     ~/bin/env/wally.py
