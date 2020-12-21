@@ -23,8 +23,8 @@ warp_pointer		        = 0
 
 #===[ WINDOW DECORATION ]===#
 border_width          = 2
-color_focus = rgb:63/7B/92
-color_unfocus = rgb:10/11/16
+color_focus = rgb:6A/88/99
+color_unfocus = rgb:10/12/16
 region_padding        = 6
 tile_gap              = 6
 
@@ -41,19 +41,19 @@ bar_enabled		            = 0
 bar_enabled_ws[1]	        = 1
 disable_border		        = 0
 bar_border_width	        = 0
-bar_color[1] = rgb:10/11/16
+bar_color[1] = rgb:10/12/16
 bar_border[1]		        = rgb:ff/ff/ff
 bar_border_unfocus[1]	    = rgb:00/40/40
 bar_color_selected[1]	    = rgb:00/80/80
-bar_font_color[1] = rgb:b7/c6/d7
-bar_font_color_selected = rgb:b7/c6/d7
+bar_font_color[1] = rgb:c1/d2/dc
+bar_font_color_selected = rgb:c1/d2/dc
 # bar_font		            = Hack Nerd Font:pixelsize=14:antialias=true
 bar_font		            = Hack Nerd Font:pixelsize=14, Joypixel:pixelsize=14, Noto Sans:pixelsize=14
 # bar_font_pua		        = Font Awesome 5 Free:pixelsize=14:antialias=true
 bar_justify		            = center
-# bar_format		            = +N:+I +S [+D] +2<%a %b %d %y [%l:%M:%S] +2<+A+4<+V
-# bar_format		            = +N:+I [+D]   [%l:%M:%S]  +A  +V
-bar_format		            = +|1L [+N:+I] +S [+D]  +W  +|1C [ %H:%M]  +|1R +A
+# bar_format		            = +N:+I +S [+D] +2<%a %b %d %y [%l:%M:%S] +2<+A+4<+V    # ORIGINAL
+# bar_format		            = +N:+I [+D]   [%l:%M:%S]  +A                          # CENTERED
+bar_format		            = +|1L [+N:+I] +S [ +D ]  +W  +|1C  [%H:%M]  +|1R +A         # POLYBAR
 workspace_indicator	        = listcurrent,listactive,markcurrent,printnames
 bar_at_bottom		        = 0
 stack_enabled		        = 1

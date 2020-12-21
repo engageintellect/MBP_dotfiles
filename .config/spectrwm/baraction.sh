@@ -2,7 +2,7 @@
 
 
 # SLEEP TIMER
-SLEEP_SEC=1  # set bar_delay = 5 in /etc/spectrwm.conf
+SLEEP_SEC=2  # set bar_delay = 5 in /etc/spectrwm.conf
 COUNT=0
 
 # MAIN LOOP
@@ -12,6 +12,8 @@ while :; do
     memory=$(free -mh | awk 'FNR == 2 {print}' | awk '{print $3}')
     ssid=$(python3 ~/.config/spectrwm/bar/get_ssid.py)
     local_ip=$(python3 ~/.config/spectrwm/bar/get_ip.py)
+
+
 
 	let COUNT=$COUNT+1
 
