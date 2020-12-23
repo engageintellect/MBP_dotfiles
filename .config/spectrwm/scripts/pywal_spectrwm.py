@@ -15,12 +15,11 @@ with open(os.environ["HOME"] + "/.cache/wal/colors.json", "r") as Pywal_json:
 
     # GET COLORS FROM "~/.cache/wal/colors.json"
     pywal['background'] = hexColors(data['color0'])
-    # pywal['focus'] = hexColors(data['color2'])
-    pywal['focus'] = hexColors(data['color1'])
-    pywal['primary'] = hexColors(data['color3'])
-    # pywal['unfocus'] = hexColors(data['color1'])
+    pywal['primary'] = hexColors(data['color2'])
+    pywal['focus'] = hexColors(data['color3'])
     pywal['unfocus'] = hexColors(data['color0'])
-    pywal['text'] = hexColors(data['color15'])
+    # pywal['text'] = hexColors(data['color7'])
+    pywal['text'] = hexColors(data['color7'])
 
 
 # PATHS (new and backup file)
@@ -40,10 +39,11 @@ with open(oldPath) as old:
                     moddedBg = 'bar_color[1] = ' + pywal['background'] + '\n'
                     print('writing background')
                     new.write(moddedBg)
+            
             elif 'bar_font_color[1]' in line:
                 print("found bar_font_color")
                 if(line[0] != '#'):
-                    moddedFontColor = 'bar_font_color[1] = ' + pywal['text'] + '\n'
+                    moddedFontColor = 'bar_font_color[1] = ' + pywal['text'] + "," + pywal['focus'] + '\n'
                     print('writing text color')
                     new.write(moddedFontColor)
 
@@ -64,10 +64,10 @@ with open(oldPath) as old:
             elif 'bar_font_color_selected' in line:
                 print("found bar_font_color_selected")
                 if(line[0] != '#'):
-                    modded_bar_font_selected = 'bar_font_color_selected = ' + pywal['text'] + '\n'
+                    modded_bar_font_selected = 'bar_font_color_selected = ' + pywal['focus'] + '\n'
                     print('writing bar_font_color_selected')
                     new.write(modded_bar_font_selected)
-
+            
             else: new.write(line)
 
 # os.system('clear')           
