@@ -132,6 +132,14 @@ rmgit()
     python3 ~/code/python/projects/github_repo_maker/remove_github_repo.py $1
 }
 
+#=[ GIT ADD, COMMIT, PUSH ]=#
+acp()
+{
+    git add .
+    git commit -m $1
+    git push origin master
+}
+
 
 #=[ FZF PHOTOS ]=#
 

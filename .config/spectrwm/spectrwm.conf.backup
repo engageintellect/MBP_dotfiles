@@ -23,8 +23,8 @@ warp_pointer		        = 0
 
 #===[ WINDOW DECORATION ]===#
 border_width          = 2
-color_focus = rgb:B7/B9/C3
-color_unfocus = rgb:13/18/1c
+color_focus = rgb:45/79/47
+color_unfocus = rgb:02/07/02
 region_padding        = 6
 tile_gap              = 6
 
@@ -41,19 +41,19 @@ bar_enabled		            = 1
 # bar_enabled_ws[1]	        = 0
 disable_border		        = 0
 bar_border_width	        = 0
-bar_color[1] = rgb:13/18/1c
+bar_color[1] = rgb:02/07/02
 bar_border[1]		        = rgb:ff/ff/ff
 bar_border_unfocus[1]	    = rgb:00/40/40
 bar_color_selected[1]	    = rgb:00/80/80
-bar_font_color_selected = rgb:B7/B9/C3
-bar_font_color[1] = rgb:de/e6/eb,rgb:B7/B9/C3
+bar_font_color_selected = rgb:45/79/47
+bar_font_color[1] = rgb:ab/ca/a8,rgb:45/79/47
 # bar_font		            = Hack Nerd Font:pixelsize=16:antialias=true
 # bar_font		            = Hack Nerd Font:pixelsize=14:antialias=true , Joypixels:pixelsize=14       # NO POLYBAR
 bar_font		            = Hack Nerd Font:pixelsize=21.5:antialias=true , Joypixels:pixelsize=14     # POLYBAR
 bar_justify		            = center
 # bar_format                  = +N:+I +S [+D] +2<%a %b %d %y [%l:%M:%S] +2<+A+4<+V          # ORIGINAL
 # bar_format                  = +N:+I [+D]   [%l:%M:%S]  +A                                # CENTERED
-bar_format                  = +|L +@fg=1;+D[+I]+S|+@fg=0;+W  +|1C  +@fg=1;[+@fg=0; %a %b %d %H:%M +@fg=1;]+@fg=0;  +|R +A            # POLYBAR
+bar_format                  = +|L +@fg=1;[+D][+I]+S|+@fg=0;+W  +|1C  +@fg=1;[+@fg=0; %a %b %d %H:%M +@fg=1;]+@fg=0;  +|R +A            # POLYBAR
 workspace_indicator	        = listcurrent,listactive,markcurrent,printnames
 bar_at_bottom		        = 0
 stack_enabled		        = 1
@@ -69,7 +69,7 @@ urgent_enabled		        = 1
 urgent_collapse	            = 0
 
 # Dialog box size ratio when using TRANSSZ quirk; 0.3 < dialog_ratio <= 1.0
-dialog_ratio		= 0.6
+dialog_ratio		= 0.5
 
 # Split a non-RandR dual head setup into one region per monitor
 # (non-standard driver-based multihead is not seen by spectrwm)
@@ -93,16 +93,28 @@ autorun = ws[1]:~/.config/spectrwm/autostart.sh
 # name			= ws[9]:  [FILES]
 # name			= ws[10]:  [EMACS]
 
-name			= ws[1]:  
-name			= ws[2]:  
-name			= ws[3]:  
-name			= ws[4]:  
-name			= ws[5]:  
-name			= ws[6]:  
-name			= ws[7]:  
-name			= ws[8]:  
-name			= ws[9]:  
-name			= ws[10]: 
+
+name			= ws[1]:DEV
+name			= ws[2]:CODE
+name			= ws[3]:WWW
+name			= ws[4]:CHAT
+name			= ws[5]:MEDIA
+name			= ws[6]:MAIL
+name			= ws[7]:VM
+name			= ws[8]:SYS
+name			= ws[9]:FILES
+name			= ws[10]:EMACS
+
+# name			= ws[1]:  
+# name			= ws[2]:   
+# name			= ws[3]:  
+# name			= ws[4]:  
+# name			= ws[5]:  
+# name			= ws[6]:  
+# name			= ws[7]:  
+# name			= ws[8]:  
+# name			= ws[9]:  
+# name			= ws[10]: 
 
 
 #===[ CUSTOM WORKSPACE LAYOUTS ]===#

@@ -10,7 +10,7 @@
 set from = "jc9361@gmail.com"
 set realname = "Josh"
 set imap_user = "jc9361@gmail.com"
-set imap_pass = 'PASSWORD'
+set imap_pass = 'Emagdnim$r3dux'
 
 ##REMOTE GMAIL FOLDERS
 set folder = "imaps://imap.gmail.com:993"
@@ -20,7 +20,7 @@ set trash = "+[Google Mail]/Trash"
 
 ##SMTP Settings to sent email
 set smtp_url = "smtp://jc9361@smtp.gmail.com:587/"
-set smtp_pass = 'PASSWORD'
+set smtp_pass = 'Emagdnim$r3dux'
 
 ##LOCAL FOLDERS FOR CACHED HEADERS AND CERTIFICATES
 set header_cache =~/.config/mutt/cache/headers
@@ -45,7 +45,8 @@ bind index G imap-fetch-mail
 
 
 color index         green default ~N
-color index         green default ~P
+color index         blue default ~P
+color index         red default ~D
 color normal	    white black
 color attachment    yellow black
 color hdrdefault    red black

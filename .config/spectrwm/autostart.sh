@@ -30,7 +30,7 @@ xset r rate 275 200
 /usr/bin/setxkbmap -option "caps:swapescape" &
 
 # RELOAD PYWAL
-rwal -R
+wal -R
 
 # COMPILE ST
 python /home/r3dux/bin/env/pywal/st_pywal.py

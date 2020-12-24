@@ -43,7 +43,7 @@ font-3 = "Font Awesome:style=Regular:pixelsize=10;1"
 font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=12;1"
 font-5 = "Font Awesome 5 Brands:pixelsize=12;1"
 
-modules-left = ewmh bspwm i3 xwindow
+modules-left = bspwm i3 xwindow
 modules-center = date
 modules-right = eth wlan ip battery 
 

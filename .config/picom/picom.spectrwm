@@ -44,7 +44,7 @@ round-borders-exclude = [
 
 shadow = true;
 shadow-radius = 20;
-shadow-opacity = .75
+shadow-opacity = .50
 shadow-offset-x = -15;
 shadow-offset-y = -15;
 
@@ -178,7 +178,7 @@ focus-exclude = [
 #
 # opacity-rule = []
 opacity-rule = [
-  # "90:class_g    = 'st-256color'",
+  "90:class_g    = 'st-256color'",
   # "90:class_g    = 'Dunst'",
   "100:class_g    = 'URxvt'",
   "100:class_g    = 'kitty'",
