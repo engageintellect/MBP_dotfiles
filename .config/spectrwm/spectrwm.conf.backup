@@ -23,8 +23,8 @@ warp_pointer		        = 0
 
 #===[ WINDOW DECORATION ]===#
 border_width          = 2
-color_focus = rgb:C4/A7/37
-color_unfocus = rgb:0c/0d/0f
+color_focus = rgb:B7/B9/C3
+color_unfocus = rgb:13/18/1c
 region_padding        = 6
 tile_gap              = 6
 
@@ -41,14 +41,15 @@ bar_enabled		            = 1
 # bar_enabled_ws[1]	        = 0
 disable_border		        = 0
 bar_border_width	        = 0
-bar_color[1] = rgb:0c/0d/0f
+bar_color[1] = rgb:13/18/1c
 bar_border[1]		        = rgb:ff/ff/ff
 bar_border_unfocus[1]	    = rgb:00/40/40
 bar_color_selected[1]	    = rgb:00/80/80
-bar_font_color_selected = rgb:C4/A7/37
-bar_font_color[1] = rgb:c5/c5/c9,rgb:C4/A7/37
+bar_font_color_selected = rgb:B7/B9/C3
+bar_font_color[1] = rgb:de/e6/eb,rgb:B7/B9/C3
 # bar_font		            = Hack Nerd Font:pixelsize=16:antialias=true
-bar_font		            = Hack Nerd Font:pixelsize=21.5:antialias=true , Joypixels:pixelsize=14
+# bar_font		            = Hack Nerd Font:pixelsize=14:antialias=true , Joypixels:pixelsize=14       # NO POLYBAR
+bar_font		            = Hack Nerd Font:pixelsize=21.5:antialias=true , Joypixels:pixelsize=14     # POLYBAR
 bar_justify		            = center
 # bar_format                  = +N:+I +S [+D] +2<%a %b %d %y [%l:%M:%S] +2<+A+4<+V          # ORIGINAL
 # bar_format                  = +N:+I [+D]   [%l:%M:%S]  +A                                # CENTERED

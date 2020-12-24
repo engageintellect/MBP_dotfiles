@@ -12,18 +12,9 @@
 background = ${xrdb:color0}
 foreground = ${xrdb:color7}
 foreground-alt = ${xrdb:color7}
-#primary = ${xrdb:color1}
 primary = ${xrdb:color3}
 secondary = ${xrdb:color2}
 alert = ${xrdb:color3}
-
-#background = #000000
-#background-alt = #444
-#foreground = #ffffff
-#foreground-alt = #999999
-#primary = #ffb52a
-#secondary = #e60053
-#alert = #bd2c40
 
 [bar/new]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -33,16 +24,14 @@ height = 30
 ;offset-y = 1%
 radius = 0
 fixed-center = true
-
 background = ${colors.background}
 foreground = ${colors.foreground}
-
 line-size = none
 line-color = #f00
 border-size = 0
 border-color = #00000000
 padding-left = 0
-padding-right = 0
+padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
@@ -56,8 +45,7 @@ font-5 = "Font Awesome 5 Brands:pixelsize=12;1"
 
 modules-left = ewmh bspwm i3 xwindow
 modules-center = date
-modules-right = eth wlan battery 
-; modules-right = temperature cpu memory eth wlan battery 
+modules-right = eth wlan ip battery 
 
 tray-position = right
 tray-padding = 2
@@ -76,39 +64,40 @@ scroll-down = bspwm-deskprev
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+
+
 [module/xwindow]
 type = internal/xwindow
-label =| %title:0:50:...%
+label = | %title%
+label-maxlen = 50
+format-foreground = ${colors.primary}
+format-background = ${colors.background}
+
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
 label-layout-underline = ${colors.secondary}
-
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
+
 [module/filesystem]
 type = internal/fs
 interval = 25
-
 mount-0 = /
-
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
+
 [module/bspwm]
 type = internal/bspwm
-
 label-focused = %name%
 label-focused-background = ${colors.primary}
 label-focused-foreground = ${colors.background}
@@ -122,9 +111,9 @@ label-urgent-padding = 2
 label-empty = 
 label-empty-foreground = ${colors.foreground}
 label-empty-padding = 2
-
 ; Separator in between workspaces
 ; label-separator = |
+
 
 [module/i3]
 type = internal/i3
@@ -160,25 +149,58 @@ label-urgent-padding = 1
 ;label-separator = |
 
 
+[module/ewmh]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = true
+enable-scroll = true
+reverse-scroll = true
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+#icon-5 = 6;
+format = <label-state>
+label-monitor = %name%
+label-focused = %name%
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.primary}
+label-active-foreground = ${colors.background}
+label-active-background = ${colors.primary}
+;label-active-underline= $(colors.primary}
+label-active-padding = 2
+label-occupied = %name%
+label-occupied-padding = 2
+label-urgent = %name%
+label-occupied-foreground = ${colors.foreground}
+label-occupied-background = ${colors.background}
+;label-occupied-underline = ${colors.alert}
+label-urgent-padding = 2
+label-empty = 
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 2
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+
+
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
 icon-prev = 
 icon-stop = 
 icon-play = 
 icon-pause = 
 icon-next = 
-
 label-song-maxlen = 25
 label-song-ellipsis = true
 
+
 [module/xbacklight]
 type = internal/xbacklight
-
 format = <label> <bar>
 label = BL
-
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = #fff
@@ -190,10 +212,12 @@ bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
+
 [module/backlight-acpi]
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
+
 
 [module/cpu]
 type = internal/cpu
@@ -203,6 +227,7 @@ format-prefix-foreground = ${colors.foreground}
 format-underline = #f90000
 label = %percentage:2%%
 
+
 [module/memory]
 type = internal/memory
 interval = 2
@@ -211,49 +236,117 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = "%percentage_used%%  ]                "
 
+
 [module/wlan]
+;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
 interface = wlan0
-interval = 1.0
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #ffffff
-label-connected =  %local_ip%   %essid%
+interval = 3.0
+label-connected = %essid%
+
+format-connected = <label-connected>
+;format-connected = <ramp-signal> <label-connected>
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.background}
+format-connected-prefix = "  "
+format-connected-prefix-foreground = ${colors.primary}
+format-connected-prefix-background = ${colors.background}
+;format-connected-underline = #7e52c6
+
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.alert}
+label-disconnected-background = ${colors.background}
+
 format-disconnected = <label-disconnected>
-label-disconnected = Connecting %ifname% to network %essid%...
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+format-disconnected-foreground = ${colors.alert}
+format-disconnected-background = ${colors.background}
+format-disconnected-prefix = "  "
+format-disconnected-prefix-foreground = ${colors.alert}
+format-disconnected-prefix-background = ${colors.background}
+;format-disconnected-underline =${colors.alert}
+
+ramp-signal-0 = ▁
+ramp-signal-1 = ▂
+ramp-signal-2 = ▃
+ramp-signal-3 = ▄
+ramp-signal-4 = ▅
+ramp-signal-5 = ▆
+ramp-signal-6 = ▇
+ramp-signal-7 = █
+ramp-signal-foreground = #7e52c6
+
+
+[module/ip]
+;https://github.com/jaagr/polybar/wiki/Module:-network
+type = internal/network
+interface = wlan0
+interval = 3.0
+label-connected = %local_ip%
+
+format-connected = <label-connected>
+;format-connected = <ramp-signal> <label-connected>
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.background}
+format-connected-prefix = "  "
+format-connected-prefix-foreground = ${colors.primary}
+format-connected-prefix-background = ${colors.background}
+;format-connected-underline = #7e52c6
+
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.alert}
+label-disconnected-background = ${colors.background}
+
+format-disconnected = <label-disconnected>
+format-disconnected-foreground = ${colors.alert}
+format-disconnected-background = ${colors.background}
+format-disconnected-prefix = "  "
+format-disconnected-prefix-foreground = ${colors.alert}
+format-disconnected-prefix-background = ${colors.background}
+;format-disconnected-underline =${colors.alert}
+
+ramp-signal-0 = ▁
+ramp-signal-1 = ▂
+ramp-signal-2 = ▃
+ramp-signal-3 = ▄
+ramp-signal-4 = ▅
+ramp-signal-5 = ▆
+ramp-signal-6 = ▇
+ramp-signal-7 = █
+ramp-signal-foreground = #7e52c6
+
 
 [module/eth]
 type = internal/network
 interface = enp0s25
 interval = 3.0
-
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected =  %local_ip%
-
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
+
 [module/date]
+;https://github.com/jaagr/polybar/wiki/Module:-date
 type = internal/date
+; Seconds to sleep between updates
 interval = 5
-date =
-date-alt = "%m/%d/%y"
-time = "%l : %M %p  "
-time-alt = %l : %M %p
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #ffffff
+; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+date-alt = " %D-%M-%Y"
+time = %l:%M
+;time-alt = %H:%M
+format-prefix = " "
+format-prefix-foreground = ${colors.primary}
+;format-underline = #c1941a
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 label = %date% %time%
+
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -310,39 +403,49 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
+
+
 [module/battery]
+;https://github.com/jaagr/polybar/wiki/Module:-battery
 type = internal/battery
 battery = BAT0
 adapter = ADP1
-full-at = 98
-format-full = "   "
-format-charging = " <label-charging>  "
-format-discharging = "<ramp-capacity> <label-discharging>  "
-format-charging-underline = #ffffff
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+full-at = 100
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
+format-charging = <animation-charging> <label-charging>
+label-charging = %percentage%%
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.background}
+;format-charging-underline = #a3c725
 
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%%
+;format-discharging-underline = #c7ae25
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.background}
 
-label = "[  TEMP %temperature-f%"
-label-warn = %temperature-f%
-label-warn-foreground = ${colors.secondary}
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.primary}
+;format-full-underline = #a3c725
+format-full-foreground = ${colors.foreground}
+format-full-background = ${colors.background}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-capacity-0 =   
+ramp-capacity-1 =   
+ramp-capacity-2 =   
+ramp-capacity-3 =   
+ramp-capacity-4 =   
+ramp-capacity-foreground = ${colors.primary}
+
+animation-charging-0 =   
+animation-charging-1 =   
+animation-charging-2 =   
+animation-charging-3 =   
+animation-charging-4 =   
+animation-charging-foreground = ${colors.primary}
+animation-charging-framerate = 1000
+
+
 
 [module/powermenu]
 type = custom/menu
