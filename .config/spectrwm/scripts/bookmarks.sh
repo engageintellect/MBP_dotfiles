@@ -23,7 +23,7 @@ quit")
 
 # ROFI
 choice=$( echo -e "${options[0]}" | rofi -dmenu -p "BOOKMARKS"  \
-    -font "Hack Nerd Font 10" -location 3 -width 15 -lines 100)
+    -font "Hack Nerd Font 10" -location 1 -width 15 -lines 100)
 
 case $choice in
 	quit)

@@ -36,8 +36,8 @@ module-margin-left = 1
 module-margin-right = 2
 
 ; BAR FONTS
-font-0 = "Noto Regular:size=10;2"
-font-1 = "Ubuntu Mono:size=12;3"
+font-0 = "Noto Sans:size=12;2"
+font-1 = "FontAwesome:size=12;3"
 font-2 = "Noto Sans:size=12;3"
 font-3 = "Font Awesome:style=Regular:pixelsize=10;1"
 font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=12;1"
@@ -50,20 +50,14 @@ modules-right = eth wlan ip battery
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
-
 enable-ipc = true
-
 wm-restack = bspwm
 ;wm-restack = i3
-
 ;override-redirect = true
-
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
-
 cursor-click = pointer
 cursor-scroll = ns-resize
-
 
 
 [module/xwindow]
@@ -182,7 +176,6 @@ label-empty-foreground = ${colors.foreground}
 label-empty-padding = 2
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-
 
 
 [module/mpd]
@@ -331,16 +324,12 @@ format-disconnected =
 
 
 [module/date]
-;https://github.com/jaagr/polybar/wiki/Module:-date
 type = internal/date
-; Seconds to sleep between updates
 interval = 5
-; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
-; NOTE: if you want to use syntax tags here you need to use %%{...}
 date-alt = " %D-%M-%Y"
 time = %l:%M
 ;time-alt = %H:%M
-format-prefix = " "
+format-prefix = ""
 format-prefix-foreground = ${colors.primary}
 ;format-underline = #c1941a
 format-foreground = ${colors.foreground}
@@ -350,14 +339,11 @@ label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
-
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
-
 label-muted = 🔇 muted
 label-muted-foreground = #666
-
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
@@ -374,18 +360,16 @@ bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
+
 
 [module/alsa]
 type = internal/alsa
-
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL
 label-volume-foreground = ${root.foreground}
-
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
-
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
@@ -402,7 +386,6 @@ bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
-
 
 
 [module/battery]
@@ -411,32 +394,27 @@ type = internal/battery
 battery = BAT0
 adapter = ADP1
 full-at = 100
-
 format-charging = <animation-charging> <label-charging>
 label-charging = %percentage%%
 format-charging-foreground = ${colors.foreground}
 format-charging-background = ${colors.background}
 ;format-charging-underline = #a3c725
-
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage%%
 ;format-discharging-underline = #c7ae25
 format-discharging-foreground = ${colors.foreground}
 format-discharging-background = ${colors.background}
-
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.primary}
 ;format-full-underline = #a3c725
 format-full-foreground = ${colors.foreground}
 format-full-background = ${colors.background}
-
 ramp-capacity-0 =   
 ramp-capacity-1 =   
 ramp-capacity-2 =   
 ramp-capacity-3 =   
 ramp-capacity-4 =   
 ramp-capacity-foreground = ${colors.primary}
-
 animation-charging-0 =   
 animation-charging-1 =   
 animation-charging-2 =   
@@ -446,12 +424,9 @@ animation-charging-foreground = ${colors.primary}
 animation-charging-framerate = 1000
 
 
-
 [module/powermenu]
 type = custom/menu
-
 expand-right = true
-
 format-spacing = 1
 
 label-open = 
@@ -475,6 +450,7 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
 
 [settings]
 screenchange-reload = true
