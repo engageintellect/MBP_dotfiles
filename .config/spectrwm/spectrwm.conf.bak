@@ -12,7 +12,7 @@
 #===[ WORKSPACES ]===#
 workspace_limit	            = 10
 focus_mode		            = default
-focus_close		            = last
+focus_close		            = previous
 focus_close_wrap	        = 0
 focus_default		        = last
 spawn_position		        = first
@@ -23,8 +23,8 @@ warp_pointer		        = 0
 
 #===[ WINDOW DECORATION ]===#
 border_width          = 2
-color_focus = rgb:3E/98/A0
-color_unfocus = rgb:0E/26/30
+color_focus = rgb:F1/94/6D
+color_unfocus = rgb:08/06/11
 region_padding        = 6
 tile_gap              = 6
 
@@ -36,23 +36,25 @@ disable_border      = 1
 
 #===[ BAR ]===#
 bar_action		            = ~/.config/spectrwm/baraction.sh
-bar_action_expand	        = 1
-bar_enabled		            = 1
-# bar_enabled_ws[1]	        = 0
+bar_action_expand	        = 0
+bar_enabled		            = 0
+bar_enabled_ws[1]	        = 1
 disable_border		        = 0
 bar_border_width	        = 0
-bar_color[1] = rgb:0E/26/30
+bar_color[1] = rgb:08/06/11
 bar_border[1]		        = rgb:ff/ff/ff
 bar_border_unfocus[1]	    = rgb:00/40/40
 bar_color_selected[1]	    = rgb:00/80/80
-bar_font_color_selected = rgb:3E/98/A0
-bar_font_color[1] = rgb:ba/d8/d5,rgb:3E/98/A0
-# bar_font		            = Hack Nerd Font:pixelsize=16:antialias=true
-# bar_font		            = Hack Nerd Font:pixelsize=14:antialias=true , Joypixels:pixelsize=14       # NO POLYBAR
-bar_font		            = Hack Nerd Font:pixelsize=21.5:antialias=true , Joypixels:pixelsize=14     # POLYBAR
+bar_font_color[1] = rgb:e4/d0/cf,rgb:F1/94/6D
+bar_font_color_selected = rgb:F1/94/6D
+# bar_font		            = Hack Nerd Font:pixelsize=14:antialias=true
+bar_font		            = Hack Nerd Font:pixelsize=16, Joypixel:pixelsize=14, Noto Sans:pixelsize=14
+# bar_font_pua		        = Font Awesome 5 Free:pixelsize=14:antialias=true
 bar_justify		            = center
-# bar_format                  = +N:+I +S [+D] +2<%a %b %d %y [%l:%M:%S] +2<+A+4<+V          # ORIGINAL
-# bar_format                  = +N:+I [+D]   [%l:%M:%S]  +A                                # CENTERED
+# bar_format		            = +N:+I +S [+D] +2<%a %b %d %y [%l:%M:%S] +2<+A+4<+V            # ORIGINAL
+# bar_format		            = +N:+I [+D]   [%l:%M:%S]  +A                                  # CENTERED
+# bar_format		            = +|1L [+N:+I] +S [ +D ]  +W  +|1C  [%H:%M]  +|1R +A           # POLYBAR
+# bar_format                  = +|L +D[+I]+S|+W  +|1C  [ %a %b %d %H:%M ]  +|R +A            # POLYBAR
 bar_format                  = +|L +@fg=1;+D[+I]+S|+@fg=0;+W  +|1C  +@fg=1;[+@fg=0; %a %b %d %H:%M +@fg=1;]+@fg=0;  +|R +A            # POLYBAR
 workspace_indicator	        = listcurrent,listactive,markcurrent,printnames
 bar_at_bottom		        = 0
@@ -73,36 +75,25 @@ dialog_ratio		= 0.6
 
 # Split a non-RandR dual head setup into one region per monitor
 # (non-standard driver-based multihead is not seen by spectrwm)
-# region		= screen[1]:1050x1680+0+0
-# region		= screen[2]:1920x1080+1050+0
+region		= screen[1]:1680x1050+0+0
+# region		= screen[1]:1280x1024+1280+0
 
 
 #===[ AUTOSTART  ]===#
 autorun = ws[1]:~/.config/spectrwm/autostart.sh
 
 
-##===[ WORKSPACE NAMES ]===#
-# name			= ws[1]:  [DEV]
-# name			= ws[2]:  [CODE]
-# name			= ws[3]:  [WWW]
-# name			= ws[4]:  [CHAT]
-# name			= ws[5]:  [MEDIA]
-# name			= ws[6]:  [MAIL]
-# name			= ws[7]:  [VM]
-# name			= ws[8]:  [SYS]
-# name			= ws[9]:  [FILES]
-# name			= ws[10]:  [EMACS]
-
-name			= ws[1]:  
-name			= ws[2]:  
-name			= ws[3]:  
-name			= ws[4]:  
-name			= ws[5]:  
-name			= ws[6]:  
-name			= ws[7]:  
-name			= ws[8]:  
-name			= ws[9]:  
-name			= ws[10]: 
+#===[ WORKSPACE NAMES ]===#
+ name			= ws[1]:  DEV 
+ name			= ws[2]:  CODE
+ name			= ws[3]:  WWW
+ name			= ws[4]:  CHAT
+ name			= ws[5]:  MEDIA
+ name			= ws[6]:  MAIL
+ name			= ws[7]:  VM
+ name			= ws[8]:  SYS
+ name			= ws[9]:  FILES
+ name			= ws[10]:  EMACS
 
 
 #===[ CUSTOM WORKSPACE LAYOUTS ]===#
@@ -120,8 +111,6 @@ modkey = Mod4
 #===[ PROGRAMS ]===#
 program[term]		            = st
 program[alacritty]		        = alacritty
-program[python]                 = st -n python -e python
-program[node]                   = st -n node -e node
 program[surf]	                = surf -N -z 1.0 https://web.tabliss.io/
 program[qutebrowser]		    = qutebrowser
 program[chromium]		        = ~/.config/spectrwm/win_resize/chromium_resize.sh
@@ -129,21 +118,20 @@ program[lock]		            = slock
 program[bookmarks]	            = ~/.config/spectrwm/scripts/bookmarks.sh
 program[edit_configs]	        = ~/.config/spectrwm/scripts/edit_configs.sh
 program[dmenu_pywal]	        = ~/.config/spectrwm/pywal/dmenu_pywal.sh
-program[compile_suckless]       = ~/.config/spectrwm/scripts/compile_suckless.sh
-# program[pulsemixer]             = ~/.config/spectrwm/win_resize/pulse_resize.sh
-program[pulsemixer]             = st -n pulsemixer -e pulsemixer
+program[pulsemixer]             = ~/.config/spectrwm/win_resize/pulse_resize.sh
+# program[pulsemixer]             = st -n pulsemixer -e pulsemixer
 program[ytop]                   = st -n ytop -e ytop -b -f
 program[mutt]                   = st -n mutt -e mutt
 program[clipmenu]               = ~/.config/spectrwm/pywal/clipmenu_pywal.sh
+program[compile_suckless]       = ~/.config/spectrwm/scripts/dmenu_compile_suckless.sh
 program[wally]                  = ~/.config/spectrwm/scripts/wally.py
 program[youtube]	            = chromium --new-window --app=https://youtube.com
 program[emacs]	                = emacs
 program[pcmanfm]	            = pcmanfm
 program[bar_status]	            = ~/.config/spectrwm/bar/bar_status.sh
 program[battery_status]	        = ~/bin/env/batt.sh
-program[rofi]                   = rofi -show run -p "RUN" -font "Nerd Hack font 10" -location 0 -width 20 -lines 10
-program[emoji]                  = rofi -show emoji -modi emoji -p "EMOJI" -font "Nerd Hack font 10" -location 1 -width 20 -lines 100
-program[toggle_both_bars]         = ~/.config/spectrwm/scripts/bar_toggle.sh
+program[rofi]                   = rofi -show run -p "RUN" -font "Nerd Hack font 10" -location 1 -width 15 -lines 100
+program[emoji]                  = rofi -show emoji -modi emoji -p "EMOJI" -font "Nerd Hack font 10" -location 1 -width 15 -lines 100
 
 # To disable validation of the above, free the respective binding(s):
 # bind[]		= MOD+Shift+Delete	# disable lock
@@ -162,14 +150,13 @@ program[toggle_both_bars]         = ~/.config/spectrwm/scripts/bar_toggle.sh
 
 # Default quirks, remove with: quirk[class:name]    = NONE
 quirk[youtube:youtube]			                    = WS[5]
-# quirk[Nitrogen:nitrogen]			                = FLOAT
+quirk[Nitrogen:nitrogen]			                = FLOAT
 quirk[qpaeq:qpaeq]			                        = FLOAT
 quirk[Gimp:gimp]			                        = FLOAT + ANYWHERE
 quirk[Pcmanfm:pcmanfm]			                    = FLOAT
 # quirk[st-256color:pulsemixer]			            = FLOAT
 quirk[st-256color:ytop]			                    = FLOAT
-quirk[st-256color:pulsemixer]			            = FLOAT
-quirk[Chromium:chromium]			                = FLOAT
+quirk[Chromium:chromium]			                    = FLOAT
 # quirk[MPlayer:xv]			                        = FLOAT + FULLSCREEN + FOCUSPREV
 # quirk[Firefox-bin:firefox-bin]		            = TRANSSZ
 # quirk[Firefox:Dialog]			                    = FLOAT
@@ -188,8 +175,8 @@ quirk[Chromium:chromium]			                = FLOAT
 #===[ KEYBINDINGS ]===#
 #######################
 
-bind[toggle_both_bars]          = MOD+p
-bind[bar_toggle]	            = MOD+b
+bind[bar_toggle]	            = MOD+p
+bind[bar_status]	            = MOD+Shift+p
 # bind[bar_toggle_ws]	        = MOD+Shift+b
 # bind[button2]		            = MOD+v
 bind[cycle_layout]	            = MOD+Shift+l
@@ -334,7 +321,6 @@ bind[qutebrowser]           = MOD+i
 bind[chromium]              = MOD+c
 bind[youtube]               = MOD+y
 bind[emacs]                 = MOD+e
-bind[pcmanfm]               =MOD+Shift+i
-bind[mutt]                  =MOD+Shift+g
-bind[python]                =MOD+Control+p
-bind[node]                  =MOD+Control+n
+bind[battery_status]        = MOD+b
+bind[pcmanfm]               = MOD+Shift+i
+bind[mutt]                  = MOD+Shift+g
