@@ -117,6 +117,13 @@ f()
 }
 
 
+#=[ CD LS ]=#
+c()
+{
+    builtin cd "$@" && ls -l;
+}
+
+
 #=[ MAKE GIT REPO ]=#
 
 mkgit() 
