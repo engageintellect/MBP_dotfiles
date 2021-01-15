@@ -21,11 +21,11 @@ super + Return
     st
 
 super + a
-    alacritty
+    kitty
 
 # SCRATCHPAD
 super + ctrl + Return
-    ~/bin/env/scratchy.sh
+    {~/bin/env/scratchy.sh, bspc node -c}
 
 # DMENU
 super + shift + d
@@ -113,10 +113,18 @@ super + g
 super + shift + g
     bspc desktop -f '^6' && surf gmail.com
 
-
 # PULSEMIXER
 super + shift + a
     st -n pulsemixer -e pulsemixer
+
+# PYTHON INTERPRETER
+super + ctrl + p
+    st -n python -e python
+
+# NODE INTERPRETER
+super + ctrl + n
+    st -n node -e node
+
 
 # YTOP
 super + shift + y
@@ -158,7 +166,7 @@ super + ctrl + r
     bspc wm -r
 
 # QUIT BSPWM
-super + shift + Escape
+super + ctrl + q
     killall -q bspwm
 
 # CLOSE AND KILL
