@@ -91,7 +91,7 @@ super + shift + u
 super + s 
     surf -N -z 1.0 https://web.tabliss.io/ 
 super + w
-    bspc desktop -f '^2' && qutebrowser
+    bspc desktop -f '^3' && qutebrowser
 super + f
     firefox
 super + c
@@ -102,8 +102,8 @@ super + c
 
 # DMENU BOOKMARKS
 super + shift + b
-    ~/bin/env/scripts/rofi/bookmarks.sh
-    # ~/bin/env/scripts/surf/bookmarks.sh
+    ~/bin/env/scripts/bookmarks/bookmarks.sh
+    # ~/bin/env/scripts/rofi/bookmarks.sh
     
 # COMPILE SUCKLESS
 super + shift + c
@@ -119,9 +119,9 @@ super + y
     bspc desktop -f '^5' && chromium --new-window --app=https://youtube.com
 
 # EMAIL
-super + g
-    bspc desktop -f '^6' && st -e mutt
 super + shift + g
+    bspc desktop -f '^6' && st -e mutt
+super + g
     bspc desktop -f '^6' && surf gmail.com
 
 # PULSEMIXER
