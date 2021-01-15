@@ -31,7 +31,7 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 padding-left = 0
-padding-right = 2
+padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
@@ -326,15 +326,16 @@ format-disconnected =
 [module/date]
 type = internal/date
 interval = 5
-date-alt = " %D-%M-%Y"
-time = %l:%M
-;time-alt = %H:%M
+date =
+date-alt = " %m/%d/%y"
+time = %l:%M %p
+time-alt = %l:%M %p
 format-prefix = ""
 format-prefix-foreground = ${colors.primary}
 ;format-underline = #c1941a
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-label = %date% %time%
+label = %date%  %time%
 
 
 [module/pulseaudio]
@@ -389,7 +390,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 
 [module/battery]
-;https://github.com/jaagr/polybar/wiki/Module:-battery
+interval = 1.0
 type = internal/battery
 battery = BAT0
 adapter = ADP1
@@ -399,7 +400,7 @@ label-charging = %percentage%%
 format-charging-foreground = ${colors.foreground}
 format-charging-background = ${colors.background}
 ;format-charging-underline = #a3c725
-format-discharging = <ramp-capacity> <label-discharging>
+format-discharging = "<ramp-capacity> <label-discharging>  "
 label-discharging = %percentage%%
 ;format-discharging-underline = #c7ae25
 format-discharging-foreground = ${colors.foreground}

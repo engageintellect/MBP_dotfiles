@@ -64,6 +64,17 @@ super + shift + p
 # ROFI RUN
 super +  d
      rofi -show run -lines 6 -eh 2 -width 400 -padding 20 -opacity "20" -font "Hack Nerd Font 10"
+
+# ROFI GOOGLE SEARCH
+super + shift + s
+    ~/bin/env/scripts/surf/rofi_google_search.sh
+
+# ROFI URL SURF
+super + shift + u
+    ~/bin/env/scripts/surf/rofi_url_surf.sh
+
+
+
 # # ROFI WINDOWS
 # super + shift + w
 #      rofi -show window -lines 12 -eh 2 -width 600 -padding 20 -opacity "20" -font "Hack Nerd Font 12"

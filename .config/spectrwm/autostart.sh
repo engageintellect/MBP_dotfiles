@@ -17,7 +17,13 @@
 # SETUP TOUCHPAD
 /home/r3dux/bin/env/touchy.sh
 
-touchegg &
+
+if pgrep -x touchegg; then
+    killall -q touchegg
+    touchegg &
+else
+    touchegg &
+fi
 
 # DPI SCALING, KEY REPEAT, KEYSWAP...
 #/home/r3dux/bin/env/display_settings/dual_displays.sh

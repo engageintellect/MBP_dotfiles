@@ -22,7 +22,7 @@ warp_pointer		        = 0
 
 
 #===[ WINDOW DECORATION ]===#
-border_width          = 2
+border_width          = 3
 region_padding        = 6
 tile_gap              = 6
 
@@ -32,14 +32,14 @@ boundary_width 		= 300
 disable_border      = 1
 
 #===[ COLORS ]===#
-color_focus = rgb:23/8E/31
-color_unfocus = rgb:07/1A/1B
-bar_color[1] = rgb:07/1A/1B
+color_focus = rgb:00/6B/B1
+color_unfocus = rgb:00/11/1C
+bar_color[1] = rgb:00/11/1C
 bar_border[1]		        = rgb:ff/ff/ff
 bar_border_unfocus[1]	    = rgb:00/40/40
 bar_color_selected[1]	    = rgb:00/80/80
-bar_font_color_selected = rgb:23/8E/31
-bar_font_color[1] = rgb:b2/d8/a4,rgb:23/8E/31
+bar_font_color_selected = rgb:00/6B/B1
+bar_font_color[1] = rgb:97/bb/d3,rgb:00/6B/B1
 
 #===[ BAR ]===#
 bar_action		            = ~/.config/spectrwm/baraction.sh
@@ -55,7 +55,7 @@ bar_justify		            = center
 # bar_format                  = +N:+I +S [+D] +2<%a %b %d %y [%l:%M:%S] +2<+A+4<+V          # ORIGINAL
 # bar_format                  = +N:+I [+D]   [%l:%M:%S]  +A                                # CENTERED
 # bar_format                  = +|L+@fg=1;+L ][+I]+S|+@fg=0;+W  +|1C  +@fg=1;[+@fg=0; %a %b %d %H:%M +@fg=1;]+@fg=0;  +|R +A            # POLYBAR
-bar_format                  = +|L+@fg=1;+D[+I]+S|+@fg=0;+30_W  +|1C  +@fg=1;[+@fg=0; %a %b %d %H:%M +@fg=1;]+@fg=0;  +|R +@fg=1;+A            # POLYBAR
+bar_format                  = +|L +@fg=1;+D+S|+@fg=0;+30_W  +|1C  +@fg=1;[+@fg=0; %a %b %d %H:%M +@fg=1;]+@fg=0;  +|R +@fg=1;+A            # POLYBAR
 workspace_indicator	        = listcurrent,listactive,markcurrent,printnames
 bar_at_bottom		        = 0
 stack_enabled		        = 1
@@ -83,28 +83,28 @@ dialog_ratio		= 0.5
 autorun = ws[1]:~/.config/spectrwm/autostart.sh
 
 
-##===[ WORKSPACE NAMES ]===#
-# name			= ws[1]:  [DEV]
-# name			= ws[2]:  [CODE]
-# name			= ws[3]:  [WWW]
-# name			= ws[4]:  [CHAT]
-# name			= ws[5]:  [MEDIA]
-# name			= ws[6]:  [MAIL]
-# name			= ws[7]:  [VM]
-# name			= ws[8]:  [SYS]
-# name			= ws[9]:  [FILES]
-# name			= ws[10]:  [EMACS]
+#===[ WORKSPACE NAMES ]===#
+ name			= ws[1]:  [DEV]
+ name			= ws[2]:  [CODE]
+ name			= ws[3]:  [WWW]
+ name			= ws[4]:  [CHAT]
+ name			= ws[5]:  [MEDIA]
+ name			= ws[6]:  [MAIL]
+ name			= ws[7]:  [VM]
+ name			= ws[8]:  [SYS]
+ name			= ws[9]:  [FILES]
+ name			= ws[10]:  [EMACS]
 
-name			= ws[1]:DEV
-name			= ws[2]:CODE
-name			= ws[3]:WWW
-name			= ws[4]:CHAT
-name			= ws[5]:MEDIA
-name			= ws[6]:MAIL
-name			= ws[7]:VM
-name			= ws[8]:SYS
-name			= ws[9]:FILES
-name			= ws[10]:EMACS
+# name			= ws[1]:DEV
+# name			= ws[2]:CODE
+# name			= ws[3]:WWW
+# name			= ws[4]:CHAT
+# name			= ws[5]:MEDIA
+# name			= ws[6]:MAIL
+# name			= ws[7]:VM
+# name			= ws[8]:SYS
+# name			= ws[9]:FILES
+# name			= ws[10]:EMACS
 
 # name			= ws[1]:   
 # name			= ws[2]:    
@@ -145,6 +145,7 @@ program[compile_suckless]       = ~/.config/spectrwm/scripts/compile_suckless.sh
 # program[pulsemixer]             = ~/.config/spectrwm/win_resize/pulse_resize.sh
 program[pulsemixer]             = st -n pulsemixer -e pulsemixer
 program[ytop]                   = st -n ytop -e ytop -b -f
+program[iwd]                    = st -n iwd -e iwctl
 program[mutt]                   = st -n mutt -e mutt
 program[clipmenu]               = ~/.config/spectrwm/pywal/clipmenu_pywal.sh
 program[wally]                  = ~/.config/spectrwm/scripts/wally.py
@@ -181,6 +182,7 @@ quirk[Pcmanfm:pcmanfm]			                    = FLOAT
 # quirk[st-256color:pulsemixer]			            = FLOAT
 quirk[st-256color:ytop]			                    = FLOAT
 quirk[st-256color:pulsemixer]			            = FLOAT
+quirk[st-256color:iwd]			                    = FLOAT
 quirk[Chromium:chromium]			                = FLOAT
 # quirk[MPlayer:xv]			                        = FLOAT + FULLSCREEN + FOCUSPREV
 # quirk[Firefox-bin:firefox-bin]		            = TRANSSZ
@@ -340,6 +342,7 @@ bind[rofi]		    = MOD+d
 bind[dmenu_pywal]		    = MOD+Shift+d
 bind[pulsemixer]            = MOD+Shift+a
 bind[ytop]                  = MOD+Shift+y
+bind[iwd]                   = MOD+Shift+n
 bind[clipmenu]              = MOD+x
 bind[surf]                  = MOD+s
 bind[qutebrowser]           = MOD+i
