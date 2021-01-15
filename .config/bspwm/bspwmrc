@@ -33,7 +33,7 @@ xsetroot -cursor_name left_ptr
 #bspc monitor -d ' '  ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
 
 #===[ CURRENT WORKSPACE LAYOUT ]===#
-bspc monitor -d ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
+bspc monitor -d ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
 
 
 #===[ WINDOW SETTINGS ]===#
