@@ -26,8 +26,8 @@ export ZSH="/home/r3dux/.oh-my-zsh"
 
 #===[ THEME ]===#
 # ZSH_THEME="random"
-ZSH_THEME="agnoster"
-# ZSH_THEME="nanotech"
+# ZSH_THEME="agnoster"
+ZSH_THEME="nanotech"
 # ZSH_THEME="gallois"
 # ZSH_THEME="theunraveler"
 # ZSH_THEME="wedisagree"
