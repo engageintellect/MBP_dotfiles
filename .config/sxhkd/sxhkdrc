@@ -59,6 +59,24 @@ super + shift + p
     killall polybar && polybar -r new && bspc config top_padding 30
 
 
+#==[ TRADING ]==#
+super + ctrl + t
+    $BROWSER https://tradingview.com/chart
+
+# super + ctrl + r
+#     $BROWSER https://robinhood.com
+
+super + ctrl + w
+    bspc desktop -f '^7' && /usr/local/WebullDesktop/WebullDesktop
+
+super + ctrl + y
+    bspc desktop -f '^1'; cryptowatch_desktop
+
+# super + ctrl + h
+    # bspc desktop -f '^1'; surf https://finviz.com/map.ashx
+
+
+
 #==[ ROFI ]==#
 
 # ROFI RUN
