@@ -1,4 +1,4 @@
-#             _              _ _
+             _              _ _
 #     _______| |__      __ _| (_) __ _ ___  ___  ___
 #    |_  / __| '_ \    / _` | | |/ _` / __|/ _ \/ __|
 #     / /\__ \ | | |  | (_| | | | (_| \__ \  __/\__ \
@@ -32,12 +32,10 @@ alias weather='python ~/code/python/projects/weather/local_weather.py'
 alias cheat='curl cheat.sh'
 alias net-speed='python ~/code/python/projects/network_tools/network_speed_test/main.py'
 alias getip='curl https://ipinfo.io/ip'
-alias url='~/bin/env/scripts/surf/surf_by_url'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias iwd='clear && iwctl'
 alias surf='surf -N'
 alias pyserver='python -m http.server 8080'
-alias s='python ~/bin/env/scripts/surf/searcher.py'
 alias ff='fzf'
 alias xf='sudo fff'
 alias del='trash-put'
@@ -48,8 +46,8 @@ alias vpn='python3 ~/code/python/tools/vpn-tool.py'
 alias services='systemctl --type=service'
 alias bsprc='nvim ~/.config/bspwm/bspwmrc'
 alias sxhkdrc='nvim ~/.config/sxhkd/sxhkdrc'
-alias gh='chromium --new-window --app=https://github.com/jc9361'
-alias cp='cp -v'
+alias github='chromium --new-window --app=https://github.com/jc9361'
+alias cp='cp -vr'
 alias ls='exa --icons'
 alias l='ls -l'
 alias ll='ls -al'
@@ -63,6 +61,7 @@ alias audio='pavucontrol'
 alias eq='qpaeq'
 alias mixer='alsamixer'
 alias myip='ip --color=auto a'
+#alias neo='unimatrix -c white -s 92 -u abcdefghijklmnopqrstuvwxyz1234567890!@#$%'
 alias neo='cmatrix'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
 alias files='ranger'
@@ -79,19 +78,20 @@ alias ipkg='pacman -Si'
 alias install='sudo pacman --color auto -S'
 alias remove='sudo pacman --color auto -Rns'
 alias paclist='~/bin/env/scripts/paclist.sh'
+alias paclog='cat /var/log/pacman.log'
 alias psearch='pacman --color auto -Q | grep'
 alias autoclean='sudo pacman -Qdt'
 
 
 #===[ SSH ]===#
-alias MBP='ssh 192.168.0.239 -p 4320'
+alias MBP='ssh 192.168.0.238 -p 4320'
 alias SB2='ssh 192.168.0.157 -p 4320'
-alias x220='ssh 192.168.0.2 -p 4320'
+alias x220='ssh 192.168.0.3 -p 4320'
 # alias server='ssh -i "~/docs/keys/ubuntu_aws.pem" ubuntu@54.177.92.108'
 alias server='ssh -i "~/docs/keys/ubuntu_aws.pem" ubuntu@3.101.45.224'
 alias imac='ssh josh@192.168.0.44'
-alias pi_raspbian='ssh pi@192.168.0.184'
-alias pi_manjaro='ssh r3dux@192.168.0.185'
+alias pi_raspian='ssh pi@192.168.0.184'
+alias pi_manjaro='ssh r3dux@192.168.0.186'
 
 
 #===[ DMENU ALIASES ]===#
@@ -118,7 +118,6 @@ f()
 
 
 #=[ CD LS ]=#
-
 c()
 {
     builtin cd "$@" && ls -l;
@@ -141,7 +140,6 @@ rmgit()
 }
 
 #=[ GIT ADD, COMMIT, PUSH ]=#
-
 acp()
 {
     git add .
@@ -169,7 +167,6 @@ scomp()
 
 
 #=[ VIM OPEN ]=#
-
 
 v() 
 {
@@ -216,11 +213,23 @@ fkill()
 
 }
 
-
-crypto() 
+#=[ FZF-PYTHON ]=#
+py()
 {
-    python ~/code/python/projects/coincheck/main.py
+    python $(fzf)
+}
 
+
+#=[ STOCKS ]=#
+stocks()
+{
+    python ~/code/python/projects/stocks/main.py
+}
+
+
+crypto()
+{
+    ~/code/python/projects/coincheck/main.py
 }
 
 
@@ -229,7 +238,6 @@ tester() {
     echo '---[ TESTER ]---'
     echo '$@ [all args]             = ' $@
     echo '$0 [0 arg index]          = ' $0
-    echo '$@ [last args]            = ' $_
     echo '$1 [1st arg index]        = ' $1
     echo '$2 [2nd arg index]        = ' $2
     echo '$3 [3rd arg index]        = ' $3
