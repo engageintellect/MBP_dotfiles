@@ -29,7 +29,6 @@ alias fs='~/bin/env/scripts/fzf/nvim_fuzzy_opener.sh'
 alias ds='~/bin/env/scripts/dmenu/nvim_dmenu_opener.sh'
 alias wally='python ~/bin/env/wally_cli.py'
 alias weather='python ~/code/python/projects/weather/local_weather.py'
-alias cheat='curl cheat.sh'
 alias net-speed='python ~/code/python/projects/network_tools/network_speed_test/main.py'
 alias getip='curl https://ipinfo.io/ip'
 alias url='~/bin/env/scripts/surf/surf_by_url'
@@ -84,14 +83,14 @@ alias autoclean='sudo pacman -Qdt'
 
 
 #===[ SSH ]===#
-alias MBP='ssh 192.168.0.239 -p 4320'
+alias MBP='ssh 192.168.0.240 -p 4320'
 alias SB2='ssh 192.168.0.157 -p 4320'
-alias x220='ssh 192.168.0.2 -p 4320'
+alias x220='ssh 192.168.0.3 -p 4320'
 # alias server='ssh -i "~/docs/keys/ubuntu_aws.pem" ubuntu@54.177.92.108'
 alias server='ssh -i "~/docs/keys/ubuntu_aws.pem" ubuntu@3.101.45.224'
 alias imac='ssh josh@192.168.0.44'
 alias pi_raspbian='ssh pi@192.168.0.184'
-alias pi_manjaro='ssh r3dux@192.168.0.185'
+alias pi_manjaro='ssh r3dux@192.168.0.186'
 
 
 #===[ DMENU ALIASES ]===#
@@ -216,6 +215,17 @@ fkill()
 
 }
 
+
+#=[ CHEATSHEET ]=#
+
+cheat() 
+{
+    curl cheat.sh/$1
+
+}
+
+
+#=[ CRYPTO ]=#
 
 crypto() 
 {

@@ -60,6 +60,10 @@ super + shift + p
 
 
 #==[ TRADING ]==#
+
+super + shift + t
+    bspc desktop -f '^7' && ~/.bin/thinkorswim/thinkorswim
+
 super + ctrl + t
     $BROWSER https://tradingview.com/chart
 
@@ -179,7 +183,8 @@ super + n
     bspc desktop -f '^5' && chromium --new-window --app=https://netflix.com
 
 # SCREENSHOT
-Print
+# Print
+super + ctrl + s
     ~/bin/env/screenshot.sh
 
 # LOCK
