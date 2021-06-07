@@ -1,4 +1,4 @@
-#             _              _ _
+             _              _ _
 #     _______| |__      __ _| (_) __ _ ___  ___  ___
 #    |_  / __| '_ \    / _` | | |/ _` / __|/ _ \/ __|
 #     / /\__ \ | | |  | (_| | | | (_| \__ \  __/\__ \
@@ -72,6 +72,7 @@ alias root='sudo -i'
 alias yt='python3 ~/code/python/tools/youtube_dl.py'
 alias transmission='transmission-cli'
 alias mix='pulsemixer'
+alias reddit='rtv'
 
 
 #===[ PACMAN ]===#
@@ -86,12 +87,13 @@ alias autoclean='sudo pacman -Qdt'
 
 
 #===[ SSH ]===#
-alias MBP='ssh 192.168.0.240 -p 4320'
+alias MBP='ssh 192.168.0.244 -p 4320'
 alias SB2='ssh 192.168.0.157 -p 4320'
-alias x220='ssh 192.168.0.3 -p 4320'
+alias x220='ssh 192.168.0.7 -p 4320'
 # alias server='ssh -i "~/docs/keys/ubuntu_aws.pem" ubuntu@54.177.92.108'
 alias server='ssh -i "~/docs/keys/ubuntu_aws.pem" ubuntu@3.101.45.224'
 alias imac='ssh josh@192.168.0.44'
+alias air='ssh jana@192.168.0.80'
 alias pi_raspbian='ssh pi@192.168.0.184'
 alias pi_manjaro='ssh r3dux@192.168.0.186'
 
@@ -249,7 +251,12 @@ crypto()
 
 }
 
+#=[ NOTES ]=#
 
+notes() 
+{
+    python ~/notes/main.py
+}
 # TEST FUNCTION
 tester() {
     echo '---[ TESTER ]---'

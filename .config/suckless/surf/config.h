@@ -49,7 +49,7 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTIONS_CASE_INSENSITIVE |
         .v = (const char *[]){ "/bin/sh", "-c", \
              "prop=\"`xprop -id $2 $0 " \
              "| sed \"s/^$0(STRING) = \\(\\\\\"\\?\\)\\(.*\\)\\1$/\\2/\" " \
-             "| xargs -0 printf %b | dmenu -nb '#071A1B' -sf '#b2d8a4' -sb '#22692A' -nf '#b7c6d7' -fn 'Hack Nerd Font -10' -h 15`\" &&" \
+             "| xargs -0 printf %b | dmenu -nb '#060502' -sf '#060502' -sb '#F4291E' -nf '#F4291E' -fn 'Hack Nerd Font -12' -h 30`\" &&" \
              "xprop -id $2 -f $1 8s -set $1 \"$prop\"", \
              p, q, winid, NULL \
         } \

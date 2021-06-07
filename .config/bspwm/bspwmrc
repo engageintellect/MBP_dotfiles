@@ -97,6 +97,7 @@ bspc rule -a st-256color:st-256color state=tiled rectangle=900x600+0+0 center=tr
 bspc rule -a Alacritty rectangle=1200x800+0+0 center=true
 bspc rule -a Gimp desktop='^5' state=floating follow=on
 bspc rule -a qutebrowser state=tiled rectangle=1200x900+0+0 center=true
+bspc rule -a helloworld state=tiled rectangle=1200x900+0+0 center=true
 bspc rule -a Surf state=tiled rectangle=1200x900+0+0 center=true
 bspc rule -a Chromium state=floating rectangle=1200x900+0+0 center=true
 bspc rule -a Emacs state=tiled rectangle=1500x900+0+0 center=true

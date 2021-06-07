@@ -74,7 +74,7 @@ super + ctrl + w
     bspc desktop -f '^7' && /usr/local/WebullDesktop/WebullDesktop
 
 super + ctrl + y
-    bspc desktop -f '^1'; cryptowatch_desktop
+    bspc desktop -f '^1'; ~/.bin/cryptowatch_desktop
 
 # super + ctrl + h
     # bspc desktop -f '^1'; surf https://finviz.com/map.ashx
@@ -121,6 +121,11 @@ super + c
 
 
 #==[ PROGRAM BINDINGS ]===#
+
+# EMOJIS
+super + shift + m
+    rofi -show emoji -modi emoji -p "EMOJ" -font "Nerd Hack font 10" -location 1 -width 20 -lines 100
+
 
 # DMENU BOOKMARKS
 super + shift + b
@@ -211,8 +216,8 @@ super + {_,shift + }q
 	bspc node -{c,k}
 
 # TOGGLE MONOCLE LAYOUT
-super + shift + m
-	bspc desktop -l next
+# super + shift + m
+	# bspc desktop -l next
 
 # TOGGLE FULLSCREEN
 super + Tab
