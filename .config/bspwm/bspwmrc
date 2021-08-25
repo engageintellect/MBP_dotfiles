@@ -55,7 +55,7 @@ bspc config top_padding                     30
 bspc config bottom_padding                  0
 bspc config left_padding                    0
 bspc config righ_padding                    0
-bspc config split_ratio                     0.525
+bspc config split_ratio                     0.5
 bspc config auto_alternate                  true
 bspc config history_aware_focus             true
 bspc config remove_disabled_monitors        true
@@ -99,6 +99,7 @@ bspc rule -a Gimp desktop='^5' state=floating follow=on
 bspc rule -a qutebrowser state=tiled rectangle=1200x900+0+0 center=true
 bspc rule -a helloworld state=tiled rectangle=1200x900+0+0 center=true
 bspc rule -a Surf state=tiled rectangle=1200x900+0+0 center=true
+bspc rule -a Brave-browser state=tiled rectangle=1200x900+0+0 center=true
 bspc rule -a Chromium state=floating rectangle=1200x900+0+0 center=true
 bspc rule -a Emacs state=tiled rectangle=1500x900+0+0 center=true
 bspc rule -a "VirtualBox Manager" desktop='^8' state=floating rectangle=900x600+0+0 center=true
@@ -120,5 +121,5 @@ bspc rule -a Nitrogen state=floating rectangle=500x500+0+0 center=true
 bspc rule -a Lxappearance state=floating rectangle=500x500+0+0 center=true
 bspc rule -a Lightdm-settings state=floating rectangle=500x500+0+0 center=true
 bspc rule -a "Bluetooth Devices" state=floating rectangle=500x500+0+0 center=true
-bspc rule -a Pcmanfm desktop='^7' state=floating rectangle=600x500+0+0 center=true
+bspc rule -a Pcmanfm state=floating rectangle=600x500+0+0 center=true
 bspc rule -a "Kvantum Manager" state=floating rectangle=600x600+0+0 center=true

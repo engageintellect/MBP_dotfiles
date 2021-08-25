@@ -1,4 +1,4 @@
-             _              _ _
+              _              _ _
 #     _______| |__      __ _| (_) __ _ ___  ___  ___
 #    |_  / __| '_ \    / _` | | |/ _` / __|/ _ \/ __|
 #     / /\__ \ | | |  | (_| | | | (_| \__ \  __/\__ \
@@ -89,10 +89,11 @@ alias autoclean='sudo pacman -Qdt'
 #===[ SSH ]===#
 alias MBP='ssh 192.168.0.244 -p 4320'
 alias SB2='ssh 192.168.0.157 -p 4320'
-alias x220='ssh 192.168.0.7 -p 4320'
+alias x220='ssh 192.168.0.253 -p 4320'
 # alias server='ssh -i "~/docs/keys/ubuntu_aws.pem" ubuntu@54.177.92.108'
-alias server='ssh -i "~/docs/keys/ubuntu_aws.pem" ubuntu@3.101.45.224'
-alias imac='ssh josh@192.168.0.44'
+alias fa='ssh -i "~/docs/keys/firstam_aws.pem" ubuntu@3.101.42.200'
+alias kali='ssh -i ~/docs/keys/kali_aws.pem kali@3.227.252.213'
+alias imac='ssh josh@192.168.0.45'
 alias air='ssh jana@192.168.0.80'
 alias pi_raspbian='ssh pi@192.168.0.184'
 alias pi_manjaro='ssh r3dux@192.168.0.186'
@@ -257,6 +258,16 @@ notes()
 {
     python ~/notes/main.py
 }
+
+
+#=[ SCREEN RECORD ]=#
+
+rs() 
+{
+    python ~/code/python/tools/screen_record.py
+}
+
+
 # TEST FUNCTION
 tester() {
     echo '---[ TESTER ]---'
