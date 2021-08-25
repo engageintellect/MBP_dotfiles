@@ -264,10 +264,16 @@ notes()
 
 rs() 
 {
-    python ~/code/python/tools/screen_record.py
+    ~/bin/env/scripts/screen_record.sh
 }
 
+#=[ XMRIG ]=#
 
+mine() 
+{
+    clear && figlet "XMRIG"
+    xmrig -k -B
+}
 # TEST FUNCTION
 tester() {
     echo '---[ TESTER ]---'
