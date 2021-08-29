@@ -38,7 +38,7 @@ nmap <Leader>q :q<CR>
 nmap <Leader>w :w<CR>
 nmap <Leader>wq :wq<CR>
 nmap <Leader>l :Limelight!!<CR>
-nmap <Leader>z :FZF<CR>
+nmap <Leader>z :FZF --layout=reverse<CR>
 nmap <Leader>t :NERDTreeToggle<CR>
 "nmap <Leader>t :Vexplore<CR>
 nmap <Leader>g :Goyo<CR>
@@ -113,7 +113,7 @@ let g:kite_supported_languages = ['python']
 
 "===[ CURSOR BLOCK STYLE ]==="
 
-set guicursor=n-v-c-sm:hor20,i-ci-ve:ver25-Cursor,r-cr-o:hor20
+" set guicursor=n-v-c-sm:hor20,i-ci-ve:ver25-Cursor,r-cr-o:hor20
 
 
 "===[ CoC ]==="
