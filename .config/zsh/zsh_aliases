@@ -19,6 +19,7 @@ alias zaliases='nvim ~/.config/zsh/zsh_aliases'
 alias update-zsh='upgrade_oh_my_zsh'
 alias zshrc='nvim ~/.config/zsh/.zshrc'
 alias zshenv='nvim ~/.zshenv'
+alias zprofile='nvim ~/.config/zsh/.zprofile'
 
 #===[ MAIN ]===#
 alias cl='clear'
