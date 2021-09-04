@@ -279,15 +279,13 @@ paclist()
 {
     pacman --color=always -Q | less
     name=$(cat /etc/hostname)
-    cd ~/
     pacman --color=always -Q > ~/docs/system_setup/paclist/$name-paclist.txt
 }
 
 gen_paclist()
 {
     name=$(cat /etc/hostname)
-    cd ~/docs/system_setup/paclist
-    pacman --color=auto -Q > $name-paclist.txt
+    pacman --color=auto -Q > ~/docs/system_setup/paclist/$name-paclist.txt
 }
 
 # TEST FUNCTION
