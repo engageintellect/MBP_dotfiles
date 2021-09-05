@@ -251,13 +251,6 @@ crypto()
 
 }
 
-#=[ NOTES ]=#
-
-notes() 
-{
-    python ~/notes/main.py
-}
-
 
 #=[ SCREEN RECORD ]=#
 

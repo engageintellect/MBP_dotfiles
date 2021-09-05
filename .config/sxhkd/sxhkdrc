@@ -96,6 +96,10 @@ super + shift + s
 super + shift + u
     ~/bin/env/scripts/rofi/rofi_url_surf.sh
 
+# EMOJIS
+super + shift + m
+    ~/bin/env/scripts/rofi/rofi_show_emoji.sh
+
 
 
 # # ROFI WINDOWS
@@ -122,10 +126,6 @@ super + c
 
 
 #==[ PROGRAM BINDINGS ]===#
-
-# EMOJIS
-super + shift + m
-    rofi -show emoji -modi emoji -p "EMOJ" -font "Nerd Hack font 10" -location 1 -width 20 -lines 100
 
 
 # DMENU BOOKMARKS
