@@ -85,15 +85,16 @@ super + ctrl + y
 
 # ROFI RUN
 super +  d
-     rofi -show run -lines 6 -eh 2 -width 400 -padding 20 -opacity "20" -font "Hack Nerd Font 10"
+    ~/bin/env/scripts/rofi/rofi_run.sh
+     
 
 # ROFI GOOGLE SEARCH
 super + shift + s
-    ~/bin/env/scripts/surf/rofi_google_search.sh
+    ~/bin/env/scripts/rofi/rofi_google_search.sh
 
 # ROFI URL SURF
 super + shift + u
-    ~/bin/env/scripts/surf/rofi_url_surf.sh
+    ~/bin/env/scripts/rofi/rofi_url_surf.sh
 
 
 
@@ -129,7 +130,7 @@ super + shift + m
 
 # DMENU BOOKMARKS
 super + shift + b
-    ~/bin/env/scripts/bookmarks/bookmarks.sh
+    ~/bin/env/scripts/rofi/bookmarks/bookmarks.sh
     # ~/bin/env/scripts/rofi/bookmarks.sh
     
 # COMPILE SUCKLESS
