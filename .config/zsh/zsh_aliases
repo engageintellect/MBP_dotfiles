@@ -22,14 +22,13 @@ alias zshenv='nvim ~/.zshenv'
 alias zprofile='nvim ~/.config/zsh/.zprofile'
 
 #===[ MAIN ]===#
-alias cl='clear'
 alias h='cd'
 alias o='xdg-open'
 alias te='trash-empty'
 alias tl='trash-list'
 alias tr='trash-restore'
-alias fs='~/bin/env/scripts/fzf/nvim_fuzzy_opener.sh'
-alias ds='~/bin/env/scripts/dmenu/nvim_dmenu_opener.sh'
+alias fe='~/bin/env/scripts/fzf/nvim_fuzzy_opener.sh'
+alias de='~/bin/env/scripts/dmenu/nvim_dmenu_opener.sh'
 alias wally='python ~/bin/env/wally_cli.py'
 alias weather='python ~/code/python/projects/weather/local_weather.py'
 alias net-speed='python ~/code/python/projects/network_tools/network_speed_test/main.py'
@@ -55,6 +54,8 @@ alias ls='exa --icons'
 alias l='ls -l'
 alias ll='ls -al'
 alias la='ls -a'
+alias lst='exa --tree --color=always'
+alias lstl='exa --tree --color=always | less'
 alias uptime='uptime -p'
 alias ytop='ytop -b -f'
 alias fetch='pfetch'
@@ -85,9 +86,9 @@ alias autoclean='sudo pacman -Qdt'
 
 
 #===[ SSH ]===#
-alias MBP='ssh 192.168.0.244 -p 4320'
+alias MBP='ssh 192.168.0.243 -p 4320'
 alias SB2='ssh 192.168.0.157 -p 4320'
-alias x220='ssh 192.168.0.253 -p 4320'
+alias x220='ssh 192.168.0.6 -p 4320'
 alias fa='ssh -i "~/docs/keys/firstam_aws.pem" ubuntu@3.101.42.200'
 alias kali='ssh -i ~/docs/keys/kali_aws.pem kali@3.92.92.136'
 alias imac='ssh josh@192.168.0.45'
@@ -112,7 +113,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.config/dotfiles --work-tree=$HOME'
 #######################################################################################################################################################################################################
 
 
-#=[ FFF ]=#
+### FFF ###
 
 f() 
 {
@@ -121,7 +122,7 @@ f()
 }
 
 
-#=[ CD LS ]=#
+### CD LS ###
 
 c()
 {
@@ -129,7 +130,7 @@ c()
 }
 
 
-#=[ MAKE GIT REPO ]=#
+### MAKE GIT REPO ###
 
 mkgit() 
 {
@@ -137,7 +138,7 @@ mkgit()
 }
 
 
-#=[ REMOVE GIT REPO ]=#
+### REMOVE GIT REPO ### 
 
 rmgit() 
 {
@@ -145,7 +146,7 @@ rmgit()
 }
 
 
-#=[ GIT ADD, COMMIT, PUSH ]=#
+### GIT ADD, COMMIT, PUSH ###
 
 acp()
 {
@@ -155,7 +156,7 @@ acp()
 }
 
 
-#=[ FZF PHOTOS ]=#
+### FZF PHOTOS ###
 
 photos() 
 {
@@ -163,7 +164,7 @@ photos()
 }
 
 
-#=[ COMPILE SUCKLESS ]=#
+### COMPILE SUCKLESS ###
 
 scomp() 
 {
@@ -173,7 +174,7 @@ scomp()
 }
 
 
-#=[ VIM OPEN ]=#
+### VIM OPEN ###
 
 
 v() 
@@ -183,7 +184,7 @@ v()
 }
 
 
-#=[ EDIT CONFIGS ]=#
+### EDIT CONFIGS ###
 
 econf() 
 {
@@ -192,7 +193,7 @@ econf()
 }
 
 
-#=[ PAC-INSTALL ]=#
+### INSTALL PACKAGE ###
 
 sp() 
 {
@@ -202,7 +203,7 @@ sp()
 }
 
 
-#=[ PAC-REMOVE ]=#
+### REMOVE PACKAGE ###
 
 rp() 
 {
@@ -212,7 +213,7 @@ rp()
 }
 
 
-#=[ FZF-KILL ]=#
+### FZF KILL ###
 
 fkill() 
 {
@@ -224,16 +225,16 @@ fkill()
 }
 
 
-#=[ CHEATSHEET ]=#
+### CHEATSHEET ###
 
 cheat() 
 {
-    curl cheat.sh/$1
+    curl -s cheat.sh/$1 | less
 
 }
 
 
-#=[ STOCKS ]=#
+### STOCKS ###
 
 stocks() 
 {
@@ -243,7 +244,7 @@ stocks()
 }
 
 
-#=[ CRYPTO ]=#
+### CRYPTO ###
 
 crypto() 
 {
@@ -252,14 +253,14 @@ crypto()
 }
 
 
-#=[ SCREEN RECORD ]=#
+### SCREEN RECORD ###
 
 rs() 
 {
     ~/bin/env/scripts/screen_record.sh
 }
 
-#=[ XMRIG ]=#
+### XMRIG ###
 
 mine() 
 {
@@ -267,7 +268,7 @@ mine()
     xmrig -k -B
 }
 
-#=[ GENERATE PACLIST ]=#
+### GENERATE PACLIST ###
 
 paclist()
 {
@@ -282,7 +283,7 @@ gen_paclist()
     pacman --color=auto -Q > ~/docs/system_setup/paclist/$name-paclist.txt
 }
 
-# TEST FUNCTION
+### TEST FUNCTION ###
 tester() {
     echo '---[ TESTER ]---'
     echo '$@ [all args]             = ' $@
