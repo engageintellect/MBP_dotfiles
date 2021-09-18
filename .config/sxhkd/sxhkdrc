@@ -92,6 +92,10 @@ super +  d
 super + shift + s
     ~/bin/env/scripts/rofi/rofi_google_search.sh
 
+# ROFI YOUTUBE SEARCH
+super + shift + y
+    ~/bin/env/scripts/rofi/rofi_youtube_search.sh
+
 # ROFI URL SURF
 super + shift + u
     ~/bin/env/scripts/rofi/rofi_url_surf.sh
@@ -169,7 +173,7 @@ super + ctrl + c
     st -n bc -e bc
 
 # YTOP
-super + shift + y
+super + shift + h
     st -n ytop -e ytop -f
 
 # APPLE MUSIC
