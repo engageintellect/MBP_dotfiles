@@ -86,15 +86,15 @@ alias autoclean='sudo pacman -Qdt'
 
 
 #===[ SSH ]===#
-alias MBP='ssh 192.168.0.243 -p 4320'
-alias SB2='ssh 192.168.0.157 -p 4320'
-alias x220='ssh 192.168.0.6 -p 4320'
+alias MBP='ssh 192.168.0.244 -p 4320'
+alias SB2='ssh 192.168.0.153 -p 4320'
+alias x220='ssh 192.168.0.253 -p 4320'
 alias fa='ssh -i "~/docs/keys/firstam_aws.pem" ubuntu@3.101.42.200'
 alias kali='ssh -i ~/docs/keys/kali_aws.pem kali@3.92.92.136'
-alias imac='ssh josh@192.168.0.45'
+alias imac='ssh josh@192.168.0.75'
 # alias air='ssh jana@192.168.0.80'
-alias air='ssh jana@192.168.0.23'
-alias pi_raspbian='ssh pi@192.168.0.184'
+alias air='ssh jana@192.168.0.80'
+alias pi_raspbian='ssh pi@192.168.0.185'
 alias pi_manjaro='ssh r3dux@192.168.0.186'
 
 
@@ -265,7 +265,7 @@ rs()
 mine() 
 {
     clear && figlet "XMRIG"
-    xmrig -k -B
+    xmrig -k -B -p x --av=3 -t 4
 }
 
 ### GENERATE PACLIST ###
@@ -281,6 +281,11 @@ gen_paclist()
 {
     name=$(cat /etc/hostname)
     pacman --color=auto -Q > ~/docs/system_setup/paclist/$name-paclist.txt
+}
+
+map()
+{
+    ~/bin/env/scripts/nmap.py | less
 }
 
 ### TEST FUNCTION ###

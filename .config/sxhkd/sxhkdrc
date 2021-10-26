@@ -73,8 +73,6 @@ super + ctrl + t
 super + ctrl + w
     bspc desktop -f '^7' && /usr/local/WebullDesktop/WebullDesktop
 
-super + ctrl + y
-    bspc desktop -f '^1'; ~/.bin/cryptowatch_desktop
 
 # super + ctrl + h
     # bspc desktop -f '^1'; surf https://finviz.com/map.ashx
@@ -173,7 +171,7 @@ super + ctrl + c
     st -n bc -e bc
 
 # YTOP
-super + shift + h
+super + ctrl + y
     st -n ytop -e ytop -f
 
 # APPLE MUSIC

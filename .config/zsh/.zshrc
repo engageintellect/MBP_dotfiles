@@ -91,6 +91,9 @@ fi
 #===[ ALIASES ]===#
 source ~/.config/zsh/zsh_aliases
 
+#===[ GOTO ]===#
+source ~/.bin/goto/goto.sh
+
 
 #===[ PYWAL ]===#
 (cat ~/.cache/wal/sequences &)
