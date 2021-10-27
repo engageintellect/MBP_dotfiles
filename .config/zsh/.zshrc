@@ -89,7 +89,7 @@ fi
 
 
 #===[ ALIASES ]===#
-source ~/.config/zsh/zsh_aliases
+source $HOME/.config/zsh/zsh_aliases
 
 #===[ GOTO ]===#
 source ~/.bin/goto/goto.sh
