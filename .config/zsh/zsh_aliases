@@ -8,11 +8,12 @@
 #    
 #    BUILD: MacBook Pro
 #    VERSION: 1.0
-
-
+#
+#
 #######################################################################################################################################################################################################
 # ALIASES
 #######################################################################################################################################################################################################
+
 
 #===[ ZSH ]===#
 alias zaliases='nvim ~/.config/zsh/zsh_aliases'
@@ -77,6 +78,7 @@ alias reddit='rtv'
 
 #===[ PACMAN ]===#
 alias update='sudo pacman --color auto -Syyu'
+alias upgrade='sudo pacman --color auto -Syyu --noconfirm && paru'
 alias search='pacman --color auto -Ss'
 alias ipkg='pacman -Si'
 alias install='sudo pacman --color auto -S'
@@ -88,15 +90,15 @@ alias autoclean='sudo pacman -Qdt'
 
 #===[ SSH ]===#
 alias MBP='ssh 192.168.0.238 -p 4320'
-alias SB2='ssh 192.168.0.153 -p 4320'
-alias x220='ssh 192.168.0.253 -p 4320'
+alias SB2='ssh 192.168.0.154 -p 4320'
+alias x220='ssh 192.168.0.2 -p 4320'
 # alias server='ssh -i "~/docs/keys/ubuntu_aws.pem" ubuntu@54.177.92.108'
 alias fa='ssh -i "~/docs/keys/firstam_aws.pem" ubuntu@13.57.56.155'
 alias kali='ssh -i ~/docs/keys/kali_aws.pem kali@3.92.92.136'
 alias imac='ssh josh@192.168.0.45'
-alias air='ssh jana@192.168.0.80'
+alias air='ssh jana@192.168.0.75'
 alias pi_raspbian='ssh pi@192.168.0.184'
-alias pi_manjaro='ssh r3dux@192.168.0.186'
+alias pi_manjaro='ssh pi@192.168.0.185'
 
 
 #===[ DMENU ALIASES ]===#
@@ -214,6 +216,21 @@ rp()
 }
 
 
+#=[ AUTO-UPDATE ]=#
+
+auto-update() 
+{
+    clear && figlet "AUTO-UPDATE" && echo -e "\n"
+    echo -e "SYSTEM UPDATES" && sleep 1
+    sudo pacman -Syu --noconfirm
+    sleep 1 && clear
+    echo -e "AUR UPDATES" && sleep 1
+    yay
+    sleep 1 && clear
+
+}
+
+
 #=[ FZF-KILL ]=#
 
 fkill() 
@@ -276,11 +293,31 @@ gen_paclist()
     pacman --color=auto -Q > ~/docs/system_setup/paclist/$name-paclist.txt
 }
 
+
+#=[ ARP-SCAN ]=#
+
+scan()
+{
+    clear && figlet "arp-scan" && echo -e "\n"
+    sudo arp-scan --localnet
+}
+
+
 #=[ NMAP ]=#
 
 map()
 {
-    ~/bin/env/scripts/nmap.py | less
+    ~/bin/env/scripts/nmap.sh >> ~/scan.txt
+    bat ~/scan.txt
+    sudo rm -rf ~/scan.txt
+}
+
+
+#=[ ADD BOOKMARKS ]=#
+
+add_bookmarks()
+{
+    ~/bin/env/scripts/add_bookmark.sh
 }
 
 # TEST FUNCTION
