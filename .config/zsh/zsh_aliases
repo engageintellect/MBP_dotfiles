@@ -78,7 +78,7 @@ alias reddit='rtv'
 
 #===[ PACMAN ]===#
 alias update='sudo pacman --color auto -Syyu'
-alias upgrade='sudo pacman --color auto -Syyu --noconfirm && paru'
+alias upgrade='clear && echo UPDATING SYSTEM && sleep 1 && clear && sudo pacman --color auto -Syyu --noconfirm && paru'
 alias search='pacman --color auto -Ss'
 alias ipkg='pacman -Si'
 alias install='sudo pacman --color auto -S'
@@ -90,8 +90,8 @@ alias autoclean='sudo pacman -Qdt'
 
 #===[ SSH ]===#
 alias MBP='ssh 192.168.0.238 -p 4320'
-alias SB2='ssh 192.168.0.154 -p 4320'
-alias x220='ssh 192.168.0.2 -p 4320'
+alias SB2='ssh 192.168.0.155 -p 4320'
+alias x220='ssh 192.168.0.3 -p 4320'
 # alias server='ssh -i "~/docs/keys/ubuntu_aws.pem" ubuntu@54.177.92.108'
 alias fa='ssh -i "~/docs/keys/firstam_aws.pem" ubuntu@13.57.56.155'
 alias kali='ssh -i ~/docs/keys/kali_aws.pem kali@3.92.92.136'
