@@ -96,9 +96,11 @@ alias x220='ssh 192.168.0.3 -p 4320'
 alias fa='ssh -i "~/docs/keys/firstam_aws.pem" ubuntu@13.57.56.155'
 alias kali='ssh -i ~/docs/keys/kali_aws.pem kali@3.92.92.136'
 alias imac='ssh josh@192.168.0.45'
-alias air='ssh jana@192.168.0.75'
+alias air='ssh jana@192.168.0.197'
 alias pi_raspbian='ssh pi@192.168.0.184'
-alias pi_manjaro='ssh pi@192.168.0.185'
+alias pi_manjaro='ssh pi@192.168.0.186'
+alias kkai='ssh -i "~/docs/keys/kkai.pem" root@3.145.58.9'
+
 
 
 #===[ DMENU ALIASES ]===#
