@@ -5,11 +5,17 @@
 #      \___/|_| |_|     |_| |_| |_|\__, |    /___|___/_| |_(_)
 #                                  |___/
 #
-#ThinkPad X220
-# Version 2.5
+#       ThinkPad X220
+#       Version 2.5
+#
+#
+#------------------------------------------------
+# ZSHRC
+#------------------------------------------------
 
-
-#===[ SOURCE PYWAL COLORS ]===#
+#-----------------------
+# SOURCE PYWAL COLORS
+#-----------------------
 . "${HOME}/.cache/wal/colors.sh"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -25,7 +31,10 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/home/r3dux/.oh-my-zsh"
 
-#===[ THEME ]===#
+
+#-----------------------
+# THEME
+#-----------------------
 # ZSH_THEME="random"
 # ZSH_THEME="agnoster"
 ZSH_THEME="nanotech"
@@ -88,14 +97,21 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-#===[ ALIASES ]===#
+#-----------------------
+# ALIASES
+#-----------------------
 source $HOME/.config/zsh/zsh_aliases
 
-#===[ GOTO ]===#
+
+#-----------------------
+# GOTO
+#-----------------------
 source ~/.bin/goto/goto.sh
 
 
-#===[ PYWAL ]===#
+#-----------------------
+# PYWAL
+#-----------------------
 (cat ~/.cache/wal/sequences &)
 # Alternative (blocks terminal for 0-3ms)
 cat ~/.cache/wal/sequences
@@ -103,24 +119,34 @@ cat ~/.cache/wal/sequences
 source ~/.cache/wal/colors-tty.sh
 
 
-#===[ VI MODE ]===#
+#-----------------------
+# VI MODE
+#-----------------------
 bindkey -v
 
 
-#===[ FZF SEARCH ]===#
+#-----------------------
+# FZF SEARCH
+#-----------------------
 [ -f ~/.bin/fzf/.fzf.zsh ] && source ~/.bin/fzf/.fzf.zsh
 
 
-##===[ TMUX ]===#
+#-----------------------
+# TMUX
+#-----------------------
 #[[ $- != *i* ]] && return
 ## Otherwise start tmux
 #[[ -z "$TMUX" ]] && exec tmux
 
 
-##===[ NODE VERSION MANAGER ]===#
+#-----------------------
+# NVM
+#-----------------------
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_commands
 
 
-#===[ ZSH RUNTIME ]===#
+#-----------------------
+# ZSH RUNTIME
+#-----------------------
 clear && pfetch && python ~/code/python/tools/fortune.py

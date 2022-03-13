@@ -7,22 +7,27 @@
 #    
 #    
 #    BUILD: MacBook Pro
-#    VERSION: 1.0
+#    VERSION: 1.5
 #
 #
-#######################################################################################################################################################################################################
+#------------------------------------------------
 # ALIASES
-#######################################################################################################################################################################################################
+#------------------------------------------------
 
 
-#===[ ZSH ]===#
+#-----------------------
+# ZSH
+#-----------------------
 alias zaliases='nvim ~/.config/zsh/zsh_aliases'
 alias update-zsh='upgrade_oh_my_zsh'
 alias zshrc='nvim ~/.config/zsh/.zshrc'
 alias zshenv='nvim ~/.zshenv'
 alias zprofile='nvim ~/.config/zsh/.zprofile'
 
-#===[ MAIN ]===#
+
+#-----------------------
+# MAIN
+#-----------------------
 alias h='cd'
 alias o='xdg-open'
 alias te='trash-empty'
@@ -76,9 +81,12 @@ alias mix='pulsemixer'
 alias reddit='rtv'
 
 
-#===[ PACMAN ]===#
+#-----------------------
+# PACMAN
+#-----------------------
 alias update='sudo pacman --color auto -Syyu'
-alias upgrade='clear && echo UPDATING SYSTEM && sleep 1 && clear && sudo pacman --color auto -Syyu --noconfirm && paru'
+alias upgrade='clear && echo UPDATING SYSTEM && sleep 1 && clear && \
+    sudo pacman --color auto -Syyu --noconfirm && paru'
 alias search='pacman --color auto -Ss'
 alias ipkg='pacman -Si'
 alias install='sudo pacman --color auto -S'
@@ -88,10 +96,12 @@ alias psearch='pacman --color auto -Q | grep'
 alias autoclean='sudo pacman -Qdt'
 
 
-#===[ SSH ]===#
+#-----------------------
+# SSH
+#-----------------------
 alias MBP='ssh 192.168.0.238 -p 4320'
 alias SB2='ssh 192.168.0.155 -p 4320'
-alias x220='ssh 192.168.0.3 -p 4320'
+alias x220='ssh 192.168.0.253 -p 4320'
 # alias server='ssh -i "~/docs/keys/ubuntu_aws.pem" ubuntu@54.177.92.108'
 alias fa='ssh -i "~/docs/keys/firstam_aws.pem" ubuntu@13.57.56.155'
 alias kali='ssh -i ~/docs/keys/kali_aws.pem kali@3.92.92.136'
@@ -102,24 +112,31 @@ alias pi_manjaro='ssh pi@192.168.0.186'
 alias kkai='ssh -i "~/docs/keys/kkai.pem" root@3.145.58.9'
 
 
+#-----------------------
+# DMENU ALIASES
+#-----------------------
+alias dmenu='dmenu -fn "Hack Nerd Font -12" -h 30 -nb "$color0" -nf "$color15" -sb "$color1" -sf \
+    "$color15" -nhb "$color3" -nhf "$color0" -shb "$color3" -shf "$color15" -c -l 12'
+alias dmenu_run='dmenu_run -fn "Hack Nerd Font -12" -h 30 -nb "$color0" -nf "$color15" -sb "$color1" \
+    -sf "$color15" -nhb "$color3" -nhf "$color0" -shb "$color3" -shf "$color15" -c -l 12'
 
-#===[ DMENU ALIASES ]===#
-alias dmenu='dmenu -fn "Hack Nerd Font -12" -h 30 -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -nhb "$color3" -nhf "$color0" -shb "$color3" -shf "$color15" -c -l 12'
-alias dmenu_run='dmenu_run -fn "Hack Nerd Font -12" -h 30 -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -nhb "$color3" -nhf "$color0" -shb "$color3" -shf "$color15" -c -l 12'
 
-
-#===[ GIT BARE REPO ]===#
+#-----------------------
+# GIT BARE REPO
+#-----------------------
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.config/dotfiles --work-tree=$HOME'
 
 
 
-#######################################################################################################################################################################################################
+
+#------------------------------------------------
 # FUNCTIONS
-#######################################################################################################################################################################################################
+#------------------------------------------------
 
 
-#=[ FFF ]=#
-
+#-----------------------
+# FFF
+#-----------------------
 f() 
 {
     fff "$@"
@@ -127,32 +144,35 @@ f()
 }
 
 
-#=[ CD LS ]=#
-
+#-----------------------
+# CD LS
+#-----------------------
 c()
 {
     builtin cd "$@" && ls -l;
 }
 
-
-#=[ MAKE GIT REPO ]=#
-
+#-----------------------
+# MAKE GIT REPO
+#-----------------------
 mkgit() 
 {
     python3 ~/code/python/projects/github_repo_maker/create_github_repo.py $1
 }
 
 
-#=[ REMOVE GIT REPO ]=#
-
+#-----------------------
+# REMOVE GIT REPO
+#-----------------------
 rmgit() 
 {
     python3 ~/code/python/projects/github_repo_maker/remove_github_repo.py $1
 }
 
 
-#=[ GIT ADD, COMMIT, PUSH ]=#
-
+#-----------------------
+# GIT ADD, COMMIT, PUSH
+#-----------------------
 acp()
 {
     git add .
@@ -161,16 +181,18 @@ acp()
 }
 
 
-#=[ FZF PHOTOS ]=#
-
+#-----------------------
+# FZF PHOTOS
+#-----------------------
 photos() 
 {
     sxiv $HOME/media/photos/wallpapers/$(ls $HOME/media/photos/wallpapers | fzf --layout=reverse | awk '{print $2}')
 }
 
 
-#=[ COMPILE SUCKLESS ]=#
-
+#-----------------------
+# COMPILE SUCKLESS
+#-----------------------
 scomp() 
 {
     cd $HOME/.config/suckless; read selection <<< $(ls | fzf --layout=reverse | awk '{print $2}'); 
@@ -179,9 +201,9 @@ scomp()
 }
 
 
-#=[ VIM OPEN ]=#
-
-
+#-----------------------
+# VIM OPEN
+#-----------------------
 v() 
 {
     read selection <<< $(fzf --layout=reverse); if [[ "$selection" != "" ]]; then 
@@ -189,8 +211,9 @@ v()
 }
 
 
-#=[ EDIT CONFIGS ]=#
-
+#-----------------------
+# EDIT CONFIGS
+#-----------------------
 econf() 
 {
     cd $HOME/.config; read selection <<< $(fzf --layout=reverse); if [[ $selection != "" ]]; 
@@ -198,8 +221,9 @@ econf()
 }
 
 
-#=[ PAC-INSTALL ]=#
-
+#-----------------------
+# PAC INSTALL
+#-----------------------
 sp() 
 {
     read selection <<< $(pacman -Ssq | fzf --layout=reverse --preview='pacman -Si {}')
@@ -208,8 +232,9 @@ sp()
 }
 
 
-#=[ PAC-REMOVE ]=#
-
+#-----------------------
+# PAC REMOVE
+#-----------------------
 rp() 
 {
     read selection <<< $(pacman -Qsq | fzf --layout=reverse --preview='pacman -Qi {}')
@@ -218,8 +243,9 @@ rp()
 }
 
 
-#=[ AUTO-UPDATE ]=#
-
+#-----------------------
+# AUTO UPDATE
+#-----------------------
 auto-update() 
 {
     clear && figlet "AUTO-UPDATE" && echo -e "\n"
@@ -233,8 +259,9 @@ auto-update()
 }
 
 
-#=[ FZF-KILL ]=#
-
+#-----------------------
+# FZF-KILL
+#-----------------------
 fkill() 
 {
     read selection <<< $(ps -aux | fzf --layout=reverse)
@@ -245,50 +272,57 @@ fkill()
 }
 
 
-#=[ CHEATSHEET ]=#
-
+#-----------------------
+# CHEATSHEET
+#-----------------------
 cheat() 
 {
     curl -s cheat.sh/$1|less
-
 }
 
 
-#=[ STOCKS ]=#
-
+#-----------------------
+# STOCKS
+#-----------------------
 stocks() 
 {
     mop
     # python ~/code/python/projects/stocks/main.py
-
 }
 
 
-#=[ CRYPTO ]=#
-
+#-----------------------
+# CRYPTO
+#-----------------------
 crypto() 
 {
     python ~/code/python/projects/coincheck/main.py
 
 }
 
-#=[ SCREEN RECORD ]=#
 
+#-----------------------
+# SCREEN RECORD
+#-----------------------
 rs()
 {
     ~/bin/env/scripts/screen_record.sh
 }
 
-#=[ XMRIG ]=#
 
+#-----------------------
+# XMRIG
+#-----------------------
 mine() 
 {
     clear && figlet "XMRIG"
     xmrig -k -B -p x --av=3 -t 4
-
 }
-#=[ GEN PACLIST ]=#
 
+
+#-----------------------
+# GEN PACKAGE LIST
+#-----------------------
 gen_paclist()
 {
     name=$(cat /etc/hostname)
@@ -296,8 +330,9 @@ gen_paclist()
 }
 
 
-#=[ ARP-SCAN ]=#
-
+#-----------------------
+# ARP-SCAN
+#-----------------------
 scan()
 {
     clear && figlet "arp-scan" && echo -e "\n"
@@ -305,8 +340,9 @@ scan()
 }
 
 
-#=[ NMAP ]=#
-
+#-----------------------
+# NMAP
+#-----------------------
 map()
 {
     ~/bin/env/scripts/nmap.sh >> ~/scan.txt
@@ -315,14 +351,18 @@ map()
 }
 
 
-#=[ ADD BOOKMARKS ]=#
-
+#-----------------------
+# ADD BOOKMARKS
+#-----------------------
 add_bookmarks()
 {
     ~/bin/env/scripts/add_bookmark.sh
 }
 
-# TEST FUNCTION
+
+#-----------------------
+# TESTER
+#-----------------------
 tester() {
     echo '---[ TESTER ]---'
     echo '$@ [all args]             = ' $@
